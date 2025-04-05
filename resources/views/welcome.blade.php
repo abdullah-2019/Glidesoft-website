@@ -1,176 +1,1196 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <!-- Styles / Scripts -->
-        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-            @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @else
-            <style>
-                /*! tailwindcss v4.0.0 | MIT License | https://tailwindcss.com */@layer theme{:root{--font-sans:Figtree,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-serif:ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;--font-mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--color-red-50:oklch(.971 .013 17.38);--color-red-100:oklch(.936 .032 17.717);--color-red-200:oklch(.885 .062 18.334);--color-red-300:oklch(.808 .114 19.571);--color-red-400:oklch(.704 .191 22.216);--color-red-500:oklch(.637 .237 25.331);--color-red-600:oklch(.577 .245 27.325);--color-red-700:oklch(.505 .213 27.518);--color-red-800:oklch(.444 .177 26.899);--color-red-900:oklch(.396 .141 25.723);--color-red-950:oklch(.258 .092 26.042);--color-orange-50:oklch(.98 .016 73.684);--color-orange-100:oklch(.954 .038 75.164);--color-orange-200:oklch(.901 .076 70.697);--color-orange-300:oklch(.837 .128 66.29);--color-orange-400:oklch(.75 .183 55.934);--color-orange-500:oklch(.705 .213 47.604);--color-orange-600:oklch(.646 .222 41.116);--color-orange-700:oklch(.553 .195 38.402);--color-orange-800:oklch(.47 .157 37.304);--color-orange-900:oklch(.408 .123 38.172);--color-orange-950:oklch(.266 .079 36.259);--color-amber-50:oklch(.987 .022 95.277);--color-amber-100:oklch(.962 .059 95.617);--color-amber-200:oklch(.924 .12 95.746);--color-amber-300:oklch(.879 .169 91.605);--color-amber-400:oklch(.828 .189 84.429);--color-amber-500:oklch(.769 .188 70.08);--color-amber-600:oklch(.666 .179 58.318);--color-amber-700:oklch(.555 .163 48.998);--color-amber-800:oklch(.473 .137 46.201);--color-amber-900:oklch(.414 .112 45.904);--color-amber-950:oklch(.279 .077 45.635);--color-yellow-50:oklch(.987 .026 102.212);--color-yellow-100:oklch(.973 .071 103.193);--color-yellow-200:oklch(.945 .129 101.54);--color-yellow-300:oklch(.905 .182 98.111);--color-yellow-400:oklch(.852 .199 91.936);--color-yellow-500:oklch(.795 .184 86.047);--color-yellow-600:oklch(.681 .162 75.834);--color-yellow-700:oklch(.554 .135 66.442);--color-yellow-800:oklch(.476 .114 61.907);--color-yellow-900:oklch(.421 .095 57.708);--color-yellow-950:oklch(.286 .066 53.813);--color-lime-50:oklch(.986 .031 120.757);--color-lime-100:oklch(.967 .067 122.328);--color-lime-200:oklch(.938 .127 124.321);--color-lime-300:oklch(.897 .196 126.665);--color-lime-400:oklch(.841 .238 128.85);--color-lime-500:oklch(.768 .233 130.85);--color-lime-600:oklch(.648 .2 131.684);--color-lime-700:oklch(.532 .157 131.589);--color-lime-800:oklch(.453 .124 130.933);--color-lime-900:oklch(.405 .101 131.063);--color-lime-950:oklch(.274 .072 132.109);--color-green-50:oklch(.982 .018 155.826);--color-green-100:oklch(.962 .044 156.743);--color-green-200:oklch(.925 .084 155.995);--color-green-300:oklch(.871 .15 154.449);--color-green-400:oklch(.792 .209 151.711);--color-green-500:oklch(.723 .219 149.579);--color-green-600:oklch(.627 .194 149.214);--color-green-700:oklch(.527 .154 150.069);--color-green-800:oklch(.448 .119 151.328);--color-green-900:oklch(.393 .095 152.535);--color-green-950:oklch(.266 .065 152.934);--color-emerald-50:oklch(.979 .021 166.113);--color-emerald-100:oklch(.95 .052 163.051);--color-emerald-200:oklch(.905 .093 164.15);--color-emerald-300:oklch(.845 .143 164.978);--color-emerald-400:oklch(.765 .177 163.223);--color-emerald-500:oklch(.696 .17 162.48);--color-emerald-600:oklch(.596 .145 163.225);--color-emerald-700:oklch(.508 .118 165.612);--color-emerald-800:oklch(.432 .095 166.913);--color-emerald-900:oklch(.378 .077 168.94);--color-emerald-950:oklch(.262 .051 172.552);--color-teal-50:oklch(.984 .014 180.72);--color-teal-100:oklch(.953 .051 180.801);--color-teal-200:oklch(.91 .096 180.426);--color-teal-300:oklch(.855 .138 181.071);--color-teal-400:oklch(.777 .152 181.912);--color-teal-500:oklch(.704 .14 182.503);--color-teal-600:oklch(.6 .118 184.704);--color-teal-700:oklch(.511 .096 186.391);--color-teal-800:oklch(.437 .078 188.216);--color-teal-900:oklch(.386 .063 188.416);--color-teal-950:oklch(.277 .046 192.524);--color-cyan-50:oklch(.984 .019 200.873);--color-cyan-100:oklch(.956 .045 203.388);--color-cyan-200:oklch(.917 .08 205.041);--color-cyan-300:oklch(.865 .127 207.078);--color-cyan-400:oklch(.789 .154 211.53);--color-cyan-500:oklch(.715 .143 215.221);--color-cyan-600:oklch(.609 .126 221.723);--color-cyan-700:oklch(.52 .105 223.128);--color-cyan-800:oklch(.45 .085 224.283);--color-cyan-900:oklch(.398 .07 227.392);--color-cyan-950:oklch(.302 .056 229.695);--color-sky-50:oklch(.977 .013 236.62);--color-sky-100:oklch(.951 .026 236.824);--color-sky-200:oklch(.901 .058 230.902);--color-sky-300:oklch(.828 .111 230.318);--color-sky-400:oklch(.746 .16 232.661);--color-sky-500:oklch(.685 .169 237.323);--color-sky-600:oklch(.588 .158 241.966);--color-sky-700:oklch(.5 .134 242.749);--color-sky-800:oklch(.443 .11 240.79);--color-sky-900:oklch(.391 .09 240.876);--color-sky-950:oklch(.293 .066 243.157);--color-blue-50:oklch(.97 .014 254.604);--color-blue-100:oklch(.932 .032 255.585);--color-blue-200:oklch(.882 .059 254.128);--color-blue-300:oklch(.809 .105 251.813);--color-blue-400:oklch(.707 .165 254.624);--color-blue-500:oklch(.623 .214 259.815);--color-blue-600:oklch(.546 .245 262.881);--color-blue-700:oklch(.488 .243 264.376);--color-blue-800:oklch(.424 .199 265.638);--color-blue-900:oklch(.379 .146 265.522);--color-blue-950:oklch(.282 .091 267.935);--color-indigo-50:oklch(.962 .018 272.314);--color-indigo-100:oklch(.93 .034 272.788);--color-indigo-200:oklch(.87 .065 274.039);--color-indigo-300:oklch(.785 .115 274.713);--color-indigo-400:oklch(.673 .182 276.935);--color-indigo-500:oklch(.585 .233 277.117);--color-indigo-600:oklch(.511 .262 276.966);--color-indigo-700:oklch(.457 .24 277.023);--color-indigo-800:oklch(.398 .195 277.366);--color-indigo-900:oklch(.359 .144 278.697);--color-indigo-950:oklch(.257 .09 281.288);--color-violet-50:oklch(.969 .016 293.756);--color-violet-100:oklch(.943 .029 294.588);--color-violet-200:oklch(.894 .057 293.283);--color-violet-300:oklch(.811 .111 293.571);--color-violet-400:oklch(.702 .183 293.541);--color-violet-500:oklch(.606 .25 292.717);--color-violet-600:oklch(.541 .281 293.009);--color-violet-700:oklch(.491 .27 292.581);--color-violet-800:oklch(.432 .232 292.759);--color-violet-900:oklch(.38 .189 293.745);--color-violet-950:oklch(.283 .141 291.089);--color-purple-50:oklch(.977 .014 308.299);--color-purple-100:oklch(.946 .033 307.174);--color-purple-200:oklch(.902 .063 306.703);--color-purple-300:oklch(.827 .119 306.383);--color-purple-400:oklch(.714 .203 305.504);--color-purple-500:oklch(.627 .265 303.9);--color-purple-600:oklch(.558 .288 302.321);--color-purple-700:oklch(.496 .265 301.924);--color-purple-800:oklch(.438 .218 303.724);--color-purple-900:oklch(.381 .176 304.987);--color-purple-950:oklch(.291 .149 302.717);--color-fuchsia-50:oklch(.977 .017 320.058);--color-fuchsia-100:oklch(.952 .037 318.852);--color-fuchsia-200:oklch(.903 .076 319.62);--color-fuchsia-300:oklch(.833 .145 321.434);--color-fuchsia-400:oklch(.74 .238 322.16);--color-fuchsia-500:oklch(.667 .295 322.15);--color-fuchsia-600:oklch(.591 .293 322.896);--color-fuchsia-700:oklch(.518 .253 323.949);--color-fuchsia-800:oklch(.452 .211 324.591);--color-fuchsia-900:oklch(.401 .17 325.612);--color-fuchsia-950:oklch(.293 .136 325.661);--color-pink-50:oklch(.971 .014 343.198);--color-pink-100:oklch(.948 .028 342.258);--color-pink-200:oklch(.899 .061 343.231);--color-pink-300:oklch(.823 .12 346.018);--color-pink-400:oklch(.718 .202 349.761);--color-pink-500:oklch(.656 .241 354.308);--color-pink-600:oklch(.592 .249 .584);--color-pink-700:oklch(.525 .223 3.958);--color-pink-800:oklch(.459 .187 3.815);--color-pink-900:oklch(.408 .153 2.432);--color-pink-950:oklch(.284 .109 3.907);--color-rose-50:oklch(.969 .015 12.422);--color-rose-100:oklch(.941 .03 12.58);--color-rose-200:oklch(.892 .058 10.001);--color-rose-300:oklch(.81 .117 11.638);--color-rose-400:oklch(.712 .194 13.428);--color-rose-500:oklch(.645 .246 16.439);--color-rose-600:oklch(.586 .253 17.585);--color-rose-700:oklch(.514 .222 16.935);--color-rose-800:oklch(.455 .188 13.697);--color-rose-900:oklch(.41 .159 10.272);--color-rose-950:oklch(.271 .105 12.094);--color-slate-50:oklch(.984 .003 247.858);--color-slate-100:oklch(.968 .007 247.896);--color-slate-200:oklch(.929 .013 255.508);--color-slate-300:oklch(.869 .022 252.894);--color-slate-400:oklch(.704 .04 256.788);--color-slate-500:oklch(.554 .046 257.417);--color-slate-600:oklch(.446 .043 257.281);--color-slate-700:oklch(.372 .044 257.287);--color-slate-800:oklch(.279 .041 260.031);--color-slate-900:oklch(.208 .042 265.755);--color-slate-950:oklch(.129 .042 264.695);--color-gray-50:oklch(.985 .002 247.839);--color-gray-100:oklch(.967 .003 264.542);--color-gray-200:oklch(.928 .006 264.531);--color-gray-300:oklch(.872 .01 258.338);--color-gray-400:oklch(.707 .022 261.325);--color-gray-500:oklch(.551 .027 264.364);--color-gray-600:oklch(.446 .03 256.802);--color-gray-700:oklch(.373 .034 259.733);--color-gray-800:oklch(.278 .033 256.848);--color-gray-900:oklch(.21 .034 264.665);--color-gray-950:oklch(.13 .028 261.692);--color-zinc-50:oklch(.985 0 0);--color-zinc-100:oklch(.967 .001 286.375);--color-zinc-200:oklch(.92 .004 286.32);--color-zinc-300:oklch(.871 .006 286.286);--color-zinc-400:oklch(.705 .015 286.067);--color-zinc-500:oklch(.552 .016 285.938);--color-zinc-600:oklch(.442 .017 285.786);--color-zinc-700:oklch(.37 .013 285.805);--color-zinc-800:oklch(.274 .006 286.033);--color-zinc-900:oklch(.21 .006 285.885);--color-zinc-950:oklch(.141 .005 285.823);--color-neutral-50:oklch(.985 0 0);--color-neutral-100:oklch(.97 0 0);--color-neutral-200:oklch(.922 0 0);--color-neutral-300:oklch(.87 0 0);--color-neutral-400:oklch(.708 0 0);--color-neutral-500:oklch(.556 0 0);--color-neutral-600:oklch(.439 0 0);--color-neutral-700:oklch(.371 0 0);--color-neutral-800:oklch(.269 0 0);--color-neutral-900:oklch(.205 0 0);--color-neutral-950:oklch(.145 0 0);--color-stone-50:oklch(.985 .001 106.423);--color-stone-100:oklch(.97 .001 106.424);--color-stone-200:oklch(.923 .003 48.717);--color-stone-300:oklch(.869 .005 56.366);--color-stone-400:oklch(.709 .01 56.259);--color-stone-500:oklch(.553 .013 58.071);--color-stone-600:oklch(.444 .011 73.639);--color-stone-700:oklch(.374 .01 67.558);--color-stone-800:oklch(.268 .007 34.298);--color-stone-900:oklch(.216 .006 56.043);--color-stone-950:oklch(.147 .004 49.25);--color-black:#000;--color-white:#fff;--spacing:.25rem;--breakpoint-sm:40rem;--breakpoint-md:48rem;--breakpoint-lg:64rem;--breakpoint-xl:80rem;--breakpoint-2xl:96rem;--container-3xs:16rem;--container-2xs:18rem;--container-xs:20rem;--container-sm:24rem;--container-md:28rem;--container-lg:32rem;--container-xl:36rem;--container-2xl:42rem;--container-3xl:48rem;--container-4xl:56rem;--container-5xl:64rem;--container-6xl:72rem;--container-7xl:80rem;--text-xs:.75rem;--text-xs--line-height:calc(1/.75);--text-sm:.875rem;--text-sm--line-height:calc(1.25/.875);--text-base:1rem;--text-base--line-height: 1.5 ;--text-lg:1.125rem;--text-lg--line-height:calc(1.75/1.125);--text-xl:1.25rem;--text-xl--line-height:calc(1.75/1.25);--text-2xl:1.5rem;--text-2xl--line-height:calc(2/1.5);--text-3xl:1.875rem;--text-3xl--line-height: 1.2 ;--text-4xl:2.25rem;--text-4xl--line-height:calc(2.5/2.25);--text-5xl:3rem;--text-5xl--line-height:1;--text-6xl:3.75rem;--text-6xl--line-height:1;--text-7xl:4.5rem;--text-7xl--line-height:1;--text-8xl:6rem;--text-8xl--line-height:1;--text-9xl:8rem;--text-9xl--line-height:1;--font-weight-thin:100;--font-weight-extralight:200;--font-weight-light:300;--font-weight-normal:400;--font-weight-medium:500;--font-weight-semibold:600;--font-weight-bold:700;--font-weight-extrabold:800;--font-weight-black:900;--tracking-tighter:-.05em;--tracking-tight:-.025em;--tracking-normal:0em;--tracking-wide:.025em;--tracking-wider:.05em;--tracking-widest:.1em;--leading-tight:1.25;--leading-snug:1.375;--leading-normal:1.5;--leading-relaxed:1.625;--leading-loose:2;--radius-xs:.125rem;--radius-sm:.25rem;--radius-md:.375rem;--radius-lg:.5rem;--radius-xl:.75rem;--radius-2xl:1rem;--radius-3xl:1.5rem;--radius-4xl:2rem;--shadow-2xs:0 1px #0000000d;--shadow-xs:0 1px 2px 0 #0000000d;--shadow-sm:0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a;--shadow-md:0 4px 6px -1px #0000001a,0 2px 4px -2px #0000001a;--shadow-lg:0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a;--shadow-xl:0 20px 25px -5px #0000001a,0 8px 10px -6px #0000001a;--shadow-2xl:0 25px 50px -12px #00000040;--inset-shadow-2xs:inset 0 1px #0000000d;--inset-shadow-xs:inset 0 1px 1px #0000000d;--inset-shadow-sm:inset 0 2px 4px #0000000d;--drop-shadow-xs:0 1px 1px #0000000d;--drop-shadow-sm:0 1px 2px #00000026;--drop-shadow-md:0 3px 3px #0000001f;--drop-shadow-lg:0 4px 4px #00000026;--drop-shadow-xl:0 9px 7px #0000001a;--drop-shadow-2xl:0 25px 25px #00000026;--ease-in:cubic-bezier(.4,0,1,1);--ease-out:cubic-bezier(0,0,.2,1);--ease-in-out:cubic-bezier(.4,0,.2,1);--animate-spin:spin 1s linear infinite;--animate-ping:ping 1s cubic-bezier(0,0,.2,1)infinite;--animate-pulse:pulse 2s cubic-bezier(.4,0,.6,1)infinite;--animate-bounce:bounce 1s infinite;--blur-xs:4px;--blur-sm:8px;--blur-md:12px;--blur-lg:16px;--blur-xl:24px;--blur-2xl:40px;--blur-3xl:64px;--perspective-dramatic:100px;--perspective-near:300px;--perspective-normal:500px;--perspective-midrange:800px;--perspective-distant:1200px;--aspect-video:16/9;--default-transition-duration:.15s;--default-transition-timing-function:cubic-bezier(.4,0,.2,1);--default-font-family:var(--font-sans);--default-font-feature-settings:var(--font-sans--font-feature-settings);--default-font-variation-settings:var(--font-sans--font-variation-settings);--default-mono-font-family:var(--font-mono);--default-mono-font-feature-settings:var(--font-mono--font-feature-settings);--default-mono-font-variation-settings:var(--font-mono--font-variation-settings)}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;line-height:1.5;font-family:var(--default-font-family,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji");font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}body{line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}:-moz-focusring{outline:auto}progress{vertical-align:baseline}summary{display:list-item}ol,ul,menu{list-style:none}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}button,input,select,optgroup,textarea{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}::file-selector-button{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}:where(select:is([multiple],[size])) optgroup{font-weight:bolder}:where(select:is([multiple],[size])) optgroup option{padding-inline-start:20px}::file-selector-button{margin-inline-end:4px}::placeholder{opacity:1;color:color-mix(in oklab,currentColor 50%,transparent)}textarea{resize:vertical}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-datetime-edit{padding-block:0}::-webkit-datetime-edit-year-field{padding-block:0}::-webkit-datetime-edit-month-field{padding-block:0}::-webkit-datetime-edit-day-field{padding-block:0}::-webkit-datetime-edit-hour-field{padding-block:0}::-webkit-datetime-edit-minute-field{padding-block:0}::-webkit-datetime-edit-second-field{padding-block:0}::-webkit-datetime-edit-millisecond-field{padding-block:0}::-webkit-datetime-edit-meridiem-field{padding-block:0}:-moz-ui-invalid{box-shadow:none}button,input:where([type=button],[type=reset],[type=submit]){-webkit-appearance:button;-moz-appearance:button;appearance:button}::file-selector-button{-webkit-appearance:button;-moz-appearance:button;appearance:button}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[hidden]:where(:not([hidden=until-found])){display:none!important}*,:after,:before,::backdrop{border-color:var(--color-gray-200,currentColor)}::file-selector-button{border-color:var(--color-gray-200,currentColor)}}@layer components;@layer utilities{.absolute{position:absolute}.relative{position:relative}.static{position:static}.top-0{top:calc(var(--spacing)*0)}.-bottom-16{bottom:calc(var(--spacing)*-16)}.-left-16{left:calc(var(--spacing)*-16)}.-left-20{left:calc(var(--spacing)*-20)}.z-0{z-index:0}.row-span-1{grid-row:span 1/span 1}.row-span-1\!{grid-row:span 1/span 1!important}.-mx-3{margin-inline:calc(var(--spacing)*-3)}.mt-4{margin-top:calc(var(--spacing)*4)}.mt-6{margin-top:calc(var(--spacing)*6)}.-ml-px{margin-left:-1px}.ml-3{margin-left:calc(var(--spacing)*3)}.flex{display:flex}.grid{display:grid}.hidden{display:none}.hidden\!{display:none!important}.inline-flex{display:inline-flex}.table{display:table}.aspect-video{aspect-ratio:var(--aspect-video)}.size-5{width:calc(var(--spacing)*5);height:calc(var(--spacing)*5)}.size-6{width:calc(var(--spacing)*6);height:calc(var(--spacing)*6)}.size-12{width:calc(var(--spacing)*12);height:calc(var(--spacing)*12)}.h-5{height:calc(var(--spacing)*5)}.h-12{height:calc(var(--spacing)*12)}.h-40{height:calc(var(--spacing)*40)}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-5{width:calc(var(--spacing)*5)}.w-\[calc\(100\%_\+_8rem\)\]{width:calc(100% + 8rem)}.w-auto{width:auto}.w-full{width:100%}.max-w-2xl{max-width:var(--container-2xl)}.max-w-\[877px\]{max-width:877px}.flex-1{flex:1}.shrink-0{flex-shrink:0}.transform{transform:var(--tw-rotate-x)var(--tw-rotate-y)var(--tw-rotate-z)var(--tw-skew-x)var(--tw-skew-y)}.cursor-default{cursor:default}.resize{resize:both}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-row{flex-direction:row}.flex-row\!{flex-direction:row!important}.items-center{align-items:center}.items-start{align-items:flex-start}.items-stretch{align-items:stretch}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.justify-end{justify-content:flex-end}.justify-items-center{justify-items:center}.gap-2{gap:calc(var(--spacing)*2)}.gap-4{gap:calc(var(--spacing)*4)}.gap-6{gap:calc(var(--spacing)*6)}.self-center{align-self:center}.overflow-hidden{overflow:hidden}.rounded-\[10px\]{border-radius:10px}.rounded-full{border-radius:3.40282e38px}.rounded-lg{border-radius:var(--radius-lg)}.rounded-md{border-radius:var(--radius-md)}.rounded-xs{border-radius:var(--radius-xs)}.rounded-l-md{border-top-left-radius:var(--radius-md);border-bottom-left-radius:var(--radius-md)}.rounded-r-md{border-top-right-radius:var(--radius-md);border-bottom-right-radius:var(--radius-md)}.border{border-style:var(--tw-border-style);border-width:1px}.border-gray-300{border-color:var(--color-gray-300)}.bg-\[\#FF2D20\]\/10{background-color:#ff2d201a}.bg-gray-50{background-color:var(--color-gray-50)}.bg-white{background-color:var(--color-white)}.bg-linear-to-b{--tw-gradient-position:to bottom in oklab,;background-image:linear-gradient(var(--tw-gradient-stops))}.from-transparent{--tw-gradient-from:transparent;--tw-gradient-stops:var(--tw-gradient-via-stops,var(--tw-gradient-position,)var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))}.via-white{--tw-gradient-via:var(--color-white);--tw-gradient-via-stops:var(--tw-gradient-position,)var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-via)var(--tw-gradient-via-position),var(--tw-gradient-to)var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-via-stops)}.to-white{--tw-gradient-to:var(--color-white);--tw-gradient-stops:var(--tw-gradient-via-stops,var(--tw-gradient-position,)var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))}.to-zinc-900{--tw-gradient-to:var(--color-zinc-900);--tw-gradient-stops:var(--tw-gradient-via-stops,var(--tw-gradient-position,)var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))}.stroke-\[\#FF2D20\]{stroke:#ff2d20}.object-cover{object-fit:cover}.object-top{object-position:top}.p-6{padding:calc(var(--spacing)*6)}.px-2{padding-inline:calc(var(--spacing)*2)}.px-3{padding-inline:calc(var(--spacing)*3)}.px-4{padding-inline:calc(var(--spacing)*4)}.px-6{padding-inline:calc(var(--spacing)*6)}.py-2{padding-block:calc(var(--spacing)*2)}.py-10{padding-block:calc(var(--spacing)*10)}.py-16{padding-block:calc(var(--spacing)*16)}.pt-3{padding-top:calc(var(--spacing)*3)}.text-center{text-align:center}.font-sans{font-family:var(--font-sans)}.text-sm{font-size:var(--text-sm);line-height:var(--tw-leading,var(--text-sm--line-height))}.text-xl{font-size:var(--text-xl);line-height:var(--tw-leading,var(--text-xl--line-height))}.text-sm\/relaxed{font-size:var(--text-sm);line-height:var(--leading-relaxed)}.leading-5{--tw-leading:calc(var(--spacing)*5);line-height:calc(var(--spacing)*5)}.font-medium{--tw-font-weight:var(--font-weight-medium);font-weight:var(--font-weight-medium)}.font-semibold{--tw-font-weight:var(--font-weight-semibold);font-weight:var(--font-weight-semibold)}.text-black{color:var(--color-black)}.text-black\/50{color:color-mix(in oklab,var(--color-black)50%,transparent)}.text-gray-500{color:var(--color-gray-500)}.text-gray-700{color:var(--color-gray-700)}.text-white{color:var(--color-white)}.underline{text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.ring-1{--tw-ring-shadow:var(--tw-ring-inset,)0 0 0 calc(1px + var(--tw-ring-offset-width))var(--tw-ring-color,currentColor);box-shadow:var(--tw-inset-shadow),var(--tw-inset-ring-shadow),var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow)}.shadow-\[0px_14px_34px_0px_rgba\(0\,0\,0\,0\.08\)\]{--tw-shadow:0px 14px 34px 0px var(--tw-shadow-color,#00000014);box-shadow:var(--tw-inset-shadow),var(--tw-inset-ring-shadow),var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 3px 0 var(--tw-shadow-color,#0000001a),0 1px 2px -1px var(--tw-shadow-color,#0000001a);box-shadow:var(--tw-inset-shadow),var(--tw-inset-ring-shadow),var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow)}.shadow-xs{--tw-shadow:0 1px 2px 0 var(--tw-shadow-color,#0000000d);box-shadow:var(--tw-inset-shadow),var(--tw-inset-ring-shadow),var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow)}.ring-black{--tw-ring-color:var(--color-black)}.ring-gray-300{--tw-ring-color:var(--color-gray-300)}.ring-transparent{--tw-ring-color:transparent}.ring-white{--tw-ring-color:var(--color-white)}.ring-white\/\[0\.05\]{--tw-ring-color:color-mix(in oklab,var(--color-white)5%,transparent)}.drop-shadow{--tw-drop-shadow:drop-shadow(0 1px 2px #0000001a)drop-shadow(0 1px 1px #0000000f);filter:var(--tw-blur,)var(--tw-brightness,)var(--tw-contrast,)var(--tw-grayscale,)var(--tw-hue-rotate,)var(--tw-invert,)var(--tw-saturate,)var(--tw-sepia,)var(--tw-drop-shadow,)}.drop-shadow-\[0px_4px_34px_rgba\(0\,0\,0\,0\.06\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px #0000000f);filter:var(--tw-blur,)var(--tw-brightness,)var(--tw-contrast,)var(--tw-grayscale,)var(--tw-hue-rotate,)var(--tw-invert,)var(--tw-saturate,)var(--tw-sepia,)var(--tw-drop-shadow,)}.drop-shadow-\[0px_4px_34px_rgba\(0\,0\,0\,0\.25\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px #00000040);filter:var(--tw-blur,)var(--tw-brightness,)var(--tw-contrast,)var(--tw-grayscale,)var(--tw-hue-rotate,)var(--tw-invert,)var(--tw-saturate,)var(--tw-sepia,)var(--tw-drop-shadow,)}.\!filter{filter:var(--tw-blur,)var(--tw-brightness,)var(--tw-contrast,)var(--tw-grayscale,)var(--tw-hue-rotate,)var(--tw-invert,)var(--tw-saturate,)var(--tw-sepia,)var(--tw-drop-shadow,)!important}.filter{filter:var(--tw-blur,)var(--tw-brightness,)var(--tw-contrast,)var(--tw-grayscale,)var(--tw-hue-rotate,)var(--tw-invert,)var(--tw-saturate,)var(--tw-sepia,)var(--tw-drop-shadow,)}.backdrop-filter{-webkit-backdrop-filter:var(--tw-backdrop-blur,)var(--tw-backdrop-brightness,)var(--tw-backdrop-contrast,)var(--tw-backdrop-grayscale,)var(--tw-backdrop-hue-rotate,)var(--tw-backdrop-invert,)var(--tw-backdrop-opacity,)var(--tw-backdrop-saturate,)var(--tw-backdrop-sepia,);backdrop-filter:var(--tw-backdrop-blur,)var(--tw-backdrop-brightness,)var(--tw-backdrop-contrast,)var(--tw-backdrop-grayscale,)var(--tw-backdrop-hue-rotate,)var(--tw-backdrop-invert,)var(--tw-backdrop-opacity,)var(--tw-backdrop-saturate,)var(--tw-backdrop-sepia,)}.transition{transition-property:color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to,opacity,box-shadow,transform,translate,scale,rotate,filter,-webkit-backdrop-filter,backdrop-filter;transition-timing-function:var(--tw-ease,var(--default-transition-timing-function));transition-duration:var(--tw-duration,var(--default-transition-duration))}.duration-150{--tw-duration:.15s;transition-duration:.15s}.duration-300{--tw-duration:.3s;transition-duration:.3s}.ease-in-out{--tw-ease:var(--ease-in-out);transition-timing-function:var(--ease-in-out)}.selection\:bg-\[\#FF2D20\] ::selection{background-color:#ff2d20}.selection\:bg-\[\#FF2D20\]::selection{background-color:#ff2d20}.selection\:text-white ::selection{color:var(--color-white)}.selection\:text-white::selection{color:var(--color-white)}@media (hover:hover){.hover\:text-black:hover{color:var(--color-black)}.hover\:text-black\/70:hover{color:color-mix(in oklab,var(--color-black)70%,transparent)}.hover\:text-gray-400:hover{color:var(--color-gray-400)}.hover\:text-gray-500:hover{color:var(--color-gray-500)}.hover\:ring-black\/20:hover{--tw-ring-color:color-mix(in oklab,var(--color-black)20%,transparent)}}.focus\:z-10:focus{z-index:10}.focus\:border-blue-300:focus{border-color:var(--color-blue-300)}.focus\:ring-3:focus{--tw-ring-shadow:var(--tw-ring-inset,)0 0 0 calc(3px + var(--tw-ring-offset-width))var(--tw-ring-color,currentColor);box-shadow:var(--tw-inset-shadow),var(--tw-inset-ring-shadow),var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow)}.focus\:outline-hidden:focus{outline-style:none}@media (forced-colors:active){.focus\:outline-hidden:focus{outline-offset:2px;outline:2px solid #0000}}.focus-visible\:ring-1:focus-visible{--tw-ring-shadow:var(--tw-ring-inset,)0 0 0 calc(1px + var(--tw-ring-offset-width))var(--tw-ring-color,currentColor);box-shadow:var(--tw-inset-shadow),var(--tw-inset-ring-shadow),var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow)}.focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-color:#ff2d20}.active\:bg-gray-100:active{background-color:var(--color-gray-100)}.active\:text-gray-500:active{color:var(--color-gray-500)}.active\:text-gray-700:active{color:var(--color-gray-700)}@media (width>=40rem){.sm\:flex{display:flex}.sm\:hidden{display:none}.sm\:size-6{width:calc(var(--spacing)*6);height:calc(var(--spacing)*6)}.sm\:size-16{width:calc(var(--spacing)*16);height:calc(var(--spacing)*16)}.sm\:flex-1{flex:1}.sm\:items-center{align-items:center}.sm\:justify-between{justify-content:space-between}.sm\:pt-5{padding-top:calc(var(--spacing)*5)}}@media (width>=48rem){.md\:row-span-3{grid-row:span 3/span 3}}@media (width>=64rem){.lg\:col-start-2{grid-column-start:2}.lg\:h-16{height:calc(var(--spacing)*16)}.lg\:max-w-7xl{max-width:var(--container-7xl)}.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:flex-col{flex-direction:column}.lg\:items-end{align-items:flex-end}.lg\:justify-center{justify-content:center}.lg\:gap-8{gap:calc(var(--spacing)*8)}.lg\:p-10{padding:calc(var(--spacing)*10)}.lg\:pt-0{padding-top:calc(var(--spacing)*0)}.lg\:pb-10{padding-bottom:calc(var(--spacing)*10)}.lg\:text-\[\#FF2D20\]{color:#ff2d20}}.rtl\:flex-row-reverse:where(:dir(rtl),[dir=rtl],[dir=rtl] *){flex-direction:row-reverse}@media (prefers-color-scheme:dark){.dark\:block{display:block}.dark\:hidden{display:none}.dark\:border-gray-600{border-color:var(--color-gray-600)}.dark\:bg-black{background-color:var(--color-black)}.dark\:bg-gray-800{background-color:var(--color-gray-800)}.dark\:bg-zinc-900{background-color:var(--color-zinc-900)}.dark\:via-zinc-900{--tw-gradient-via:var(--color-zinc-900);--tw-gradient-via-stops:var(--tw-gradient-position,)var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-via)var(--tw-gradient-via-position),var(--tw-gradient-to)var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-via-stops)}.dark\:to-zinc-900{--tw-gradient-to:var(--color-zinc-900);--tw-gradient-stops:var(--tw-gradient-via-stops,var(--tw-gradient-position,)var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))}.dark\:text-gray-300{color:var(--color-gray-300)}.dark\:text-gray-400{color:var(--color-gray-400)}.dark\:text-gray-600{color:var(--color-gray-600)}.dark\:text-white{color:var(--color-white)}.dark\:text-white\/50{color:color-mix(in oklab,var(--color-white)50%,transparent)}.dark\:text-white\/70{color:color-mix(in oklab,var(--color-white)70%,transparent)}.dark\:ring-zinc-800{--tw-ring-color:var(--color-zinc-800)}@media (hover:hover){.dark\:hover\:text-gray-300:hover{color:var(--color-gray-300)}.dark\:hover\:text-white:hover{color:var(--color-white)}.dark\:hover\:text-white\/70:hover{color:color-mix(in oklab,var(--color-white)70%,transparent)}.dark\:hover\:text-white\/80:hover{color:color-mix(in oklab,var(--color-white)80%,transparent)}.dark\:hover\:ring-zinc-700:hover{--tw-ring-color:var(--color-zinc-700)}}.dark\:focus\:border-blue-700:focus{border-color:var(--color-blue-700)}.dark\:focus\:border-blue-800:focus{border-color:var(--color-blue-800)}.dark\:focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-color:#ff2d20}.dark\:focus-visible\:ring-white:focus-visible{--tw-ring-color:var(--color-white)}.dark\:active\:bg-gray-700:active{background-color:var(--color-gray-700)}.dark\:active\:text-gray-300:active{color:var(--color-gray-300)}}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes ping{75%,to{opacity:0;transform:scale(2)}}@keyframes pulse{50%{opacity:.5}}@keyframes bounce{0%,to{animation-timing-function:cubic-bezier(.8,0,1,1);transform:translateY(-25%)}50%{animation-timing-function:cubic-bezier(0,0,.2,1);transform:none}}@property --tw-rotate-x{syntax:"*";inherits:false;initial-value:rotateX(0)}@property --tw-rotate-y{syntax:"*";inherits:false;initial-value:rotateY(0)}@property --tw-rotate-z{syntax:"*";inherits:false;initial-value:rotateZ(0)}@property --tw-skew-x{syntax:"*";inherits:false;initial-value:skewX(0)}@property --tw-skew-y{syntax:"*";inherits:false;initial-value:skewY(0)}@property --tw-border-style{syntax:"*";inherits:false;initial-value:solid}@property --tw-gradient-position{syntax:"*";inherits:false}@property --tw-gradient-from{syntax:"<color>";inherits:false;initial-value:#0000}@property --tw-gradient-via{syntax:"<color>";inherits:false;initial-value:#0000}@property --tw-gradient-to{syntax:"<color>";inherits:false;initial-value:#0000}@property --tw-gradient-stops{syntax:"*";inherits:false}@property --tw-gradient-via-stops{syntax:"*";inherits:false}@property --tw-gradient-from-position{syntax:"<length-percentage>";inherits:false;initial-value:0%}@property --tw-gradient-via-position{syntax:"<length-percentage>";inherits:false;initial-value:50%}@property --tw-gradient-to-position{syntax:"<length-percentage>";inherits:false;initial-value:100%}@property --tw-leading{syntax:"*";inherits:false}@property --tw-font-weight{syntax:"*";inherits:false}@property --tw-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-shadow-color{syntax:"*";inherits:false}@property --tw-inset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-shadow-color{syntax:"*";inherits:false}@property --tw-ring-color{syntax:"*";inherits:false}@property --tw-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-ring-color{syntax:"*";inherits:false}@property --tw-inset-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-ring-inset{syntax:"*";inherits:false}@property --tw-ring-offset-width{syntax:"<length>";inherits:false;initial-value:0}@property --tw-ring-offset-color{syntax:"*";inherits:false;initial-value:#fff}@property --tw-ring-offset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-blur{syntax:"*";inherits:false}@property --tw-brightness{syntax:"*";inherits:false}@property --tw-contrast{syntax:"*";inherits:false}@property --tw-grayscale{syntax:"*";inherits:false}@property --tw-hue-rotate{syntax:"*";inherits:false}@property --tw-invert{syntax:"*";inherits:false}@property --tw-opacity{syntax:"*";inherits:false}@property --tw-saturate{syntax:"*";inherits:false}@property --tw-sepia{syntax:"*";inherits:false}@property --tw-backdrop-blur{syntax:"*";inherits:false}@property --tw-backdrop-brightness{syntax:"*";inherits:false}@property --tw-backdrop-contrast{syntax:"*";inherits:false}@property --tw-backdrop-grayscale{syntax:"*";inherits:false}@property --tw-backdrop-hue-rotate{syntax:"*";inherits:false}@property --tw-backdrop-invert{syntax:"*";inherits:false}@property --tw-backdrop-opacity{syntax:"*";inherits:false}@property --tw-backdrop-saturate{syntax:"*";inherits:false}@property --tw-backdrop-sepia{syntax:"*";inherits:false}@property --tw-duration{syntax:"*";inherits:false}@property --tw-ease{syntax:"*";inherits:false}
-            </style>
-        @endif
-    </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" alt="Laravel background" />
-            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
-                        <div class="flex lg:justify-center lg:col-start-2">
-                            <svg class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="currentColor"/></svg>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+                        <div class="company-badge mb-4">
+                            <i class="bi bi-gear-fill me-2"></i>
+                            Working for your success
                         </div>
-                        @if (Route::has('login'))
-                            <nav class="-mx-3 flex flex-1 justify-end">
-                                @auth
-                                    <a
-                                        href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-hidden focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Dashboard
-                                    </a>
-                                @else
-                                    <a
-                                        href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-hidden focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Log in
-                                    </a>
 
-                                    @if (Route::has('register'))
-                                        <a
-                                            href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-hidden focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                        >
-                                            Register
-                                        </a>
-                                    @endif
-                                @endauth
-                            </nav>
-                        @endif
-                    </header>
+                        <h1 class="mb-4">
+                            Web Applications <br>
+                            Mobile Applications <br>
+                            <span class="accent-text">Web Hosting</span>
+                        </h1>
 
-                    <main class="mt-6">
-                        <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
-                            <a
-                                href="https://laravel.com/docs"
-                                id="docs-card"
-                                class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-hidden focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-light.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden"
-                                        onerror="
-                                            document.getElementById('screenshot-container').classList.add('hidden!');
-                                            document.getElementById('docs-card').classList.add('row-span-1!');
-                                            document.getElementById('docs-card-content').classList.add('flex-row!');
-                                            document.getElementById('background').classList.add('hidden!');
-                                        "
-                                    />
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-dark.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block"
-                                    />
-                                    <div
-                                        class="absolute -bottom-16 -left-16 h-40 w-[calc(100%_+_8rem)] bg-linear-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900"
-                                    ></div>
-                                </div>
+                        <p class="mb-4 mb-md-5">
+                            We specialize in building custom web and mobile applications tailored to your business
+                            needs.
+                            From sleek user interfaces to robust backend systems, we deliver scalable solutions.
+                            Plus, our reliable web hosting ensures your applications run smoothly 24/7.
+                        </p>
 
-                                <div class="relative flex items-center gap-6 lg:items-end">
-                                    <div id="docs-card-content" class="flex items-start gap-6 lg:flex-col">
-                                        <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                            <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#FF2D20" d="M23 4a1 1 0 0 0-1.447-.894L12.224 7.77a.5.5 0 0 1-.448 0L2.447 3.106A1 1 0 0 0 1 4v13.382a1.99 1.99 0 0 0 1.105 1.79l9.448 4.728c.14.065.293.1.447.1.154-.005.306-.04.447-.105l9.453-4.724a1.99 1.99 0 0 0 1.1-1.789V4ZM3 6.023a.25.25 0 0 1 .362-.223l7.5 3.75a.251.251 0 0 1 .138.223v11.2a.25.25 0 0 1-.362.224l-7.5-3.75a.25.25 0 0 1-.138-.22V6.023Zm18 11.2a.25.25 0 0 1-.138.224l-7.5 3.75a.249.249 0 0 1-.329-.099.249.249 0 0 1-.033-.12V9.772a.251.251 0 0 1 .138-.224l7.5-3.75a.25.25 0 0 1 .362.224v11.2Z"/><path fill="#FF2D20" d="m3.55 1.893 8 4.048a1.008 1.008 0 0 0 .9 0l8-4.048a1 1 0 0 0-.9-1.785l-7.322 3.706a.506.506 0 0 1-.452 0L4.454.108a1 1 0 0 0-.9 1.785H3.55Z"/></svg>
-                                        </div>
+                        <div class="hero-buttons">
+                            <a href="#about" class="btn btn-primary me-0 me-sm-2 mx-1">Get Started</a>
+                            <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="btn btn-link mt-2 mt-sm-0 glightbox">
+                      <i class="bi bi-play-circle me-1"></i>
+                      Play Video
+                    </a> -->
+                        </div>
+                    </div>
+                </div>
 
-                                        <div class="pt-3 sm:pt-5 lg:pt-0">
-                                            <h2 class="text-xl font-semibold text-black dark:text-white">Documentation</h2>
+                <div class="col-lg-6">
+                    <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
+                        <img src="assets/img/illustration-1.webp" alt="Hero Image" class="img-fluid">
 
-                                            <p class="mt-4 text-sm/relaxed">
-                                                Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                            </p>
-                                        </div>
+                        <div class="customers-badge">
+                            <div class="customer-avatars">
+                                <img src="assets/img/avatar-1.webp" alt="Customer 1" class="avatar">
+                                <img src="assets/img/avatar-2.webp" alt="Customer 2" class="avatar">
+                                <img src="assets/img/avatar-3.webp" alt="Customer 3" class="avatar">
+                                <img src="assets/img/avatar-4.webp" alt="Customer 4" class="avatar">
+                                <img src="assets/img/avatar-5.webp" alt="Customer 5" class="avatar">
+                                <span class="avatar more">99+</span>
+                            </div>
+                            <p class="mb-0 mt-2">Trusted by 120+ businesses worldwide for their digital
+                                transformation needs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row stats-row gy-4 mt-5" data-aos="fade-up" data-aos-delay="500">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="bi bi-check-circle-fill"></i> <!-- Alternative: bi-trophy or bi-flag -->
+                        </div>
+                        <div class="stat-content">
+                            <h4>100+ Successfull projects</h4>
+                            <!-- <p class="mb-0">Recognized for innovation and outstanding software solutions.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="bi bi-globe"></i> <!-- Alternative: bi-code-slash or bi-globe -->
+                        </div>
+                        <div class="stat-content">
+                            <h4>20 Web Apps</h4>
+                            <!-- <p class="mb-0">Nullam quis ante</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="bi bi-phone"></i> <!-- Alternative: bi-tablet or bi-mobile -->
+                        </div>
+                        <div class="stat-content">
+                            <h4>8 Mobile Apps</h4>
+                            <!-- <p class="mb-0">Etiam sit amet orci</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="bi bi-cloud"></i> <!-- Alternative: bi-cloud or bi-hdd-network -->
+                        </div>
+                        <div class="stat-content">
+                            <h4>95 Web Hosting</h4>
+                            <!-- <p class="mb-0">Vestibulum ante ipsum</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4 align-items-center justify-content-between">
+
+                <div class="col-xl-5" data-aos="fade-up" data-aos-delay="200">
+                    <span class="about-meta">WHY CHOOSE US</span>
+                    <h2 class="about-title">Transforming Ideas into Reality</h2>
+                    <p class="about-description">
+                        We are a team of passionate developers and designers dedicated to delivering cutting-edge
+                        software solutions.
+                        From custom web and mobile applications to seamless UX/UI design and reliable web hosting,
+                        we ensure your business
+                        thrives in the digital world. Let us transform your ideas into reality with our expertise
+                        and commitment to excellence.
+                    </p>
+                    <div class="row feature-list-wrapper">
+                        <div class="col-md-6">
+                            <ul class="feature-list">
+                                <li><i class="bi bi-check-circle-fill"></i> Software Design and Development</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Web Application Development</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Mobile Application Development</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="feature-list">
+                                <li><i class="bi bi-check-circle-fill"></i> UX/UI Design</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Database Design</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Web Hosting</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-wrapper">
+                        <div class="row gy-4">
+                            <!-- <div class="col-lg-5">
+                      <div class="profile d-flex align-items-center gap-3">
+                        <img src="assets/img/avatar-1.webp" alt="CEO Profile" class="profile-image">
+                        <div>
+                          <h4 class="profile-name">Mario Smith</h4>
+                          <p class="profile-position">CEO &amp; Founder</p>
+                        </div>
+                      </div>
+                    </div> -->
+                            <div class="col-lg-6">
+                                <div class="contact-info d-flex align-items-center gap-2">
+                                    <i class="bi bi-envelope-fill"></i>
+                                    <div>
+                                        <p class="contact-label">Email us anytime</p>
+                                        <p class="contact-number">info@glidesoft.net</p>
                                     </div>
-
-                                    <svg class="size-6 shrink-0 stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
                                 </div>
-                            </a>
-
-                            <a
-                                href="https://laracasts.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-hidden focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M24 8.25a.5.5 0 0 0-.5-.5H.5a.5.5 0 0 0-.5.5v12a2.5 2.5 0 0 0 2.5 2.5h19a2.5 2.5 0 0 0 2.5-2.5v-12Zm-7.765 5.868a1.221 1.221 0 0 1 0 2.264l-6.626 2.776A1.153 1.153 0 0 1 8 18.123v-5.746a1.151 1.151 0 0 1 1.609-1.035l6.626 2.776ZM19.564 1.677a.25.25 0 0 0-.177-.427H15.6a.106.106 0 0 0-.072.03l-4.54 4.543a.25.25 0 0 0 .177.427h3.783c.027 0 .054-.01.073-.03l4.543-4.543ZM22.071 1.318a.047.047 0 0 0-.045.013l-4.492 4.492a.249.249 0 0 0 .038.385.25.25 0 0 0 .14.042h5.784a.5.5 0 0 0 .5-.5v-2a2.5 2.5 0 0 0-1.925-2.432ZM13.014 1.677a.25.25 0 0 0-.178-.427H9.101a.106.106 0 0 0-.073.03l-4.54 4.543a.25.25 0 0 0 .177.427H8.4a.106.106 0 0 0 .073-.03l4.54-4.543ZM6.513 1.677a.25.25 0 0 0-.177-.427H2.5A2.5 2.5 0 0 0 0 3.75v2a.5.5 0 0 0 .5.5h1.4a.106.106 0 0 0 .073-.03l4.54-4.543Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laracasts</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <a
-                                href="https://laravel-news.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-hidden focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M8.75 4.5H5.5c-.69 0-1.25.56-1.25 1.25v4.75c0 .69.56 1.25 1.25 1.25h3.25c.69 0 1.25-.56 1.25-1.25V5.75c0-.69-.56-1.25-1.25-1.25Z"/><path d="M24 10a3 3 0 0 0-3-3h-2V2.5a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2V20a3.5 3.5 0 0 0 3.5 3.5h17A3.5 3.5 0 0 0 24 20V10ZM3.5 21.5A1.5 1.5 0 0 1 2 20V3a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v17c0 .295.037.588.11.874a.5.5 0 0 1-.484.625L3.5 21.5ZM22 20a1.5 1.5 0 1 1-3 0V9.5a.5.5 0 0 1 .5-.5H21a1 1 0 0 1 1 1v10Z"/><path d="M12.751 6.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 7.3v-.5a.75.75 0 0 1 .751-.753ZM12.751 10.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 11.3v-.5a.75.75 0 0 1 .751-.753ZM4.751 14.047h10a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-10A.75.75 0 0 1 4 15.3v-.5a.75.75 0 0 1 .751-.753ZM4.75 18.047h7.5a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-7.5A.75.75 0 0 1 4 19.3v-.5a.75.75 0 0 1 .75-.753Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laravel News</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-hidden focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <g fill="#FF2D20">
-                                            <path
-                                                d="M16.597 12.635a.247.247 0 0 0-.08-.237 2.234 2.234 0 0 1-.769-1.68c.001-.195.03-.39.084-.578a.25.25 0 0 0-.09-.267 8.8 8.8 0 0 0-4.826-1.66.25.25 0 0 0-.268.181 2.5 2.5 0 0 1-2.4 1.824.045.045 0 0 0-.045.037 12.255 12.255 0 0 0-.093 3.86.251.251 0 0 0 .208.214c2.22.366 4.367 1.08 6.362 2.118a.252.252 0 0 0 .32-.079 10.09 10.09 0 0 0 1.597-3.733ZM13.616 17.968a.25.25 0 0 0-.063-.407A19.697 19.697 0 0 0 8.91 15.98a.25.25 0 0 0-.287.325c.151.455.334.898.548 1.328.437.827.981 1.594 1.619 2.28a.249.249 0 0 0 .32.044 29.13 29.13 0 0 0 2.506-1.99ZM6.303 14.105a.25.25 0 0 0 .265-.274 13.048 13.048 0 0 1 .205-4.045.062.062 0 0 0-.022-.07 2.5 2.5 0 0 1-.777-.982.25.25 0 0 0-.271-.149 11 11 0 0 0-5.6 2.815.255.255 0 0 0-.075.163c-.008.135-.02.27-.02.406.002.8.084 1.598.246 2.381a.25.25 0 0 0 .303.193 19.924 19.924 0 0 1 5.746-.438ZM9.228 20.914a.25.25 0 0 0 .1-.393 11.53 11.53 0 0 1-1.5-2.22 12.238 12.238 0 0 1-.91-2.465.248.248 0 0 0-.22-.187 18.876 18.876 0 0 0-5.69.33.249.249 0 0 0-.179.336c.838 2.142 2.272 4 4.132 5.353a.254.254 0 0 0 .15.048c1.41-.01 2.807-.282 4.117-.802ZM18.93 12.957l-.005-.008a.25.25 0 0 0-.268-.082 2.21 2.21 0 0 1-.41.081.25.25 0 0 0-.217.2c-.582 2.66-2.127 5.35-5.75 7.843a.248.248 0 0 0-.09.299.25.25 0 0 0 .065.091 28.703 28.703 0 0 0 2.662 2.12.246.246 0 0 0 .209.037c2.579-.701 4.85-2.242 6.456-4.378a.25.25 0 0 0 .048-.189 13.51 13.51 0 0 0-2.7-6.014ZM5.702 7.058a.254.254 0 0 0 .2-.165A2.488 2.488 0 0 1 7.98 5.245a.093.093 0 0 0 .078-.062 19.734 19.734 0 0 1 3.055-4.74.25.25 0 0 0-.21-.41 12.009 12.009 0 0 0-10.4 8.558.25.25 0 0 0 .373.281 12.912 12.912 0 0 1 4.826-1.814ZM10.773 22.052a.25.25 0 0 0-.28-.046c-.758.356-1.55.635-2.365.833a.25.25 0 0 0-.022.48c1.252.43 2.568.65 3.893.65.1 0 .2 0 .3-.008a.25.25 0 0 0 .147-.444c-.526-.424-1.1-.917-1.673-1.465ZM18.744 8.436a.249.249 0 0 0 .15.228 2.246 2.246 0 0 1 1.352 2.054c0 .337-.08.67-.23.972a.25.25 0 0 0 .042.28l.007.009a15.016 15.016 0 0 1 2.52 4.6.25.25 0 0 0 .37.132.25.25 0 0 0 .096-.114c.623-1.464.944-3.039.945-4.63a12.005 12.005 0 0 0-5.78-10.258.25.25 0 0 0-.373.274c.547 2.109.85 4.274.901 6.453ZM9.61 5.38a.25.25 0 0 0 .08.31c.34.24.616.561.8.935a.25.25 0 0 0 .3.127.631.631 0 0 1 .206-.034c2.054.078 4.036.772 5.69 1.991a.251.251 0 0 0 .267.024c.046-.024.093-.047.141-.067a.25.25 0 0 0 .151-.23A29.98 29.98 0 0 0 15.957.764a.25.25 0 0 0-.16-.164 11.924 11.924 0 0 0-2.21-.518.252.252 0 0 0-.215.076A22.456 22.456 0 0 0 9.61 5.38Z"
-                                            />
-                                        </g>
-                                    </svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Vibrant Ecosystem</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="rounded-xs underline hover:text-black focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white dark:focus-visible:ring-[#FF2D20]">Forge</a>, <a href="https://vapor.laravel.com" class="rounded-xs underline hover:text-black focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Vapor</a>, <a href="https://nova.laravel.com" class="rounded-xs underline hover:text-black focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Nova</a>, <a href="https://envoyer.io" class="rounded-xs underline hover:text-black focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Envoyer</a>, and <a href="https://herd.laravel.com" class="rounded-xs underline hover:text-black focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Herd</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="rounded-xs underline hover:text-black focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="rounded-xs underline hover:text-black focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="rounded-xs underline hover:text-black focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Echo</a>, <a href="https://laravel.com/docs/horizon" class="rounded-xs underline hover:text-black focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="rounded-xs underline hover:text-black focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="rounded-xs underline hover:text-black focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Telescope</a>, and more.
-                                    </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="contact-info d-flex align-items-center gap-2">
+                                    <i class="bi bi-telephone-fill"></i>
+                                    <div>
+                                        <p class="contact-label">Call us anytime</p>
+                                        <p class="contact-number">+93749840055</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </main>
+                    </div>
+                </div>
 
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </footer>
+                <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="image-wrapper">
+                        <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
+                            <img src="assets/img/about-5.webp" alt="Business Meeting"
+                                class="img-fluid main-image rounded-4">
+                            <img src="assets/img/about-2.webp" alt="Team Discussion"
+                                class="img-fluid small-image rounded-4">
+                        </div>
+                        <div class="experience-badge floating">
+                            <h3>10+ <span>Years</span></h3>
+                            <p>Of experience in software solution</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Features</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="d-flex justify-content-center">
+
+                <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
+
+                    <li class="nav-item">
+                        <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+                            <h4>High Performance</h4>
+                        </a>
+                    </li><!-- End tab nav item -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
+                            <h4>Enterprise Security</h4>
+                        </a>
+                    </li><!-- End tab nav item -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+                            <h4>Support 24/7</h4>
+                        </a><!-- End tab nav item -->
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="tab-pane fade active show" id="features-tab-1">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                            <h3>High Performance Solutions</h3>
+                            <p class="fst-italic">
+                                We build lightning-fast applications optimized for speed, scalability, and seamless
+                                user experiences.
+                            </p>
+                            <ul>
+                                <li><i class="bi bi-check2-all"></i> <span>90+ Google PageSpeed scores for all web
+                                        projects</span></li>
+                                <li><i class="bi bi-check2-all"></i> <span>NVMe SSD storage and LiteSpeed servers
+                                        for instant load times</span></li>
+                                <li><i class="bi bi-check2-all"></i> <span>Code optimization and caching for
+                                        maximum efficiency</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="assets/img/features-illustration-1.webp" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div><!-- End tab content item -->
+
+                <div class="tab-pane fade" id="features-tab-2">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                            <h3>24/7 Expert Support</h3>
+                            <p class="fst-italic">
+                                Our dedicated support team is always available to ensure your systems run smoothly,
+                                day or night.
+                            </p>
+                            <ul>
+                                <li><i class="bi bi-check2-all"></i> <span>Instant response via live chat, email,
+                                        or phone</span></li>
+                                <li><i class="bi bi-check2-all"></i> <span>Proactive server monitoring to prevent
+                                        issues</span></li>
+                                <li><i class="bi bi-check2-all"></i> <span>Technical assistance for all your hosted
+                                        applications</span></li>
+                                <li><i class="bi bi-check2-all"></i> <span>Emergency support for critical system
+                                        outages</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="assets/img/features-illustration-2.webp" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div><!-- End tab content item -->
+
+                <div class="tab-pane fade" id="features-tab-3">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                            <h3>Enterprise-Grade Security</h3>
+                            <ul>
+                                <li><i class="bi bi-check2-all"></i> <span>End-to-end encryption for all data
+                                        transmissions</span></li>
+                                <li><i class="bi bi-check2-all"></i> <span>Regular security audits and penetration
+                                        testing</span></li>
+                                <li><i class="bi bi-check2-all"></i> <span>GDPR and ISO 27001 compliant
+                                        infrastructure</span></li>
+                            </ul>
+                            <p class="fst-italic">
+                                We implement military-grade security protocols to protect your business from
+                                evolving cyber threats,
+                                ensuring your data remains safe at all times.
+                            </p>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="assets/img/features-illustration-3.webp" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div><!-- End tab content item -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Features Section -->
+
+    <!-- Features Cards Section -->
+    <section id="features-cards" class="features-cards section">
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <!-- Award-Winning Quality -->
+                <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="feature-box orange">
+                        <i class="bi bi-award"></i>
+                        <h4>Proven Excellence</h4>
+                        <p>3x award-winning development team recognized for innovation and technical expertise</p>
+                    </div>
+                </div><!-- End Feature Box-->
+
+                <!-- Client-Centric Approach -->
+                <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="feature-box blue">
+                        <i class="bi bi-patch-check"></i>
+                        <h4>Client-First Focus</h4>
+                        <p>Custom solutions tailored to your specific business needs and growth objectives</p>
+                    </div>
+                </div><!-- End Feature Box-->
+
+                <!-- Fast Delivery -->
+                <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="feature-box green">
+                        <i class="bi bi-lightning-charge"></i>
+                        <h4>Rapid Deployment</h4>
+                        <p>Agile development process delivers working solutions 40% faster than industry average</p>
+                    </div>
+                </div><!-- End Feature Box-->
+
+                <!-- ROI Focus -->
+                <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="feature-box red">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <h4>Measurable Results</h4>
+                        <p>Solutions designed to deliver tangible ROI with performance tracking and analytics</p>
+                    </div>
+                </div><!-- End Feature Box-->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Features Cards Section -->
+
+    <!-- Features 2 Section -->
+    <section id="features-2" class="features-2 section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-4">
+
+                    <!-- Cross-Platform Development -->
+                    <div class="feature-item text-end mb-5" data-aos="fade-right" data-aos-delay="200">
+                        <div class="d-flex align-items-center justify-content-end gap-4">
+                            <div class="feature-content">
+                                <h3>Cross-Platform Development</h3>
+                                <p>Build once, deploy everywhere. Our solutions work seamlessly across all devices
+                                    and operating systems.</p>
+                            </div>
+                            <div class="feature-icon flex-shrink-0">
+                                <i class="bi bi-device-ssd"></i>
+                            </div>
+                        </div>
+                    </div><!-- End .feature-item -->
+
+                    <!-- UI/UX Design -->
+                    <div class="feature-item text-end mb-5" data-aos="fade-right" data-aos-delay="300">
+                        <div class="d-flex align-items-center justify-content-end gap-4">
+                            <div class="feature-content">
+                                <h3>Intuitive UI/UX</h3>
+                                <p>Beautiful interfaces designed for maximum user engagement and conversion.</p>
+                            </div>
+                            <div class="feature-icon flex-shrink-0">
+                                <i class="bi bi-brush"></i>
+                            </div>
+                        </div>
+                    </div><!-- End .feature-item -->
+
+                    <!-- High Performance -->
+                    <div class="feature-item text-end" data-aos="fade-right" data-aos-delay="400">
+                        <div class="d-flex align-items-center justify-content-end gap-4">
+                            <div class="feature-content">
+                                <h3>High Performance</h3>
+                                <p>Optimized code and architecture for lightning-fast load times and smooth
+                                    operation.</p>
+                            </div>
+                            <div class="feature-icon flex-shrink-0">
+                                <i class="bi bi-speedometer2"></i>
+                            </div>
+                        </div>
+                    </div><!-- End .feature-item -->
+
+                </div>
+
+                <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="phone-mockup text-center">
+                        <img src="assets/img/phone-app-screen.webp" alt="Our Mobile App Development" class="img-fluid">
+                    </div>
+                </div><!-- End Phone Mockup -->
+
+                <div class="col-lg-4">
+
+                    <!-- Secure Coding -->
+                    <div class="feature-item mb-5" data-aos="fade-left" data-aos-delay="200">
+                        <div class="d-flex align-items-center gap-4">
+                            <div class="feature-icon flex-shrink-0">
+                                <i class="bi bi-shield-lock"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Enterprise Security</h3>
+                                <p>Military-grade encryption and regular security audits to protect your business
+                                    data.</p>
+                            </div>
+                        </div>
+                    </div><!-- End .feature-item -->
+
+                    <!-- Responsive Design -->
+                    <div class="feature-item mb-5" data-aos="fade-left" data-aos-delay="300">
+                        <div class="d-flex align-items-center gap-4">
+                            <div class="feature-icon flex-shrink-0">
+                                <i class="bi bi-phone"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Fully Responsive</h3>
+                                <p>Pixel-perfect designs that adapt flawlessly to any screen size or device.</p>
+                            </div>
+                        </div>
+                    </div><!-- End .feature-item -->
+
+                    <!-- Cloud Hosting -->
+                    <div class="feature-item" data-aos="fade-left" data-aos-delay="400">
+                        <div class="d-flex align-items-center gap-4">
+                            <div class="feature-icon flex-shrink-0">
+                                <i class="bi bi-cloud"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Cloud Hosting</h3>
+                                <p>Scalable, reliable hosting with 99.9% uptime and automatic backups.</p>
+                            </div>
+                        </div>
+                    </div><!-- End .feature-item -->
+
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- /Features 2 Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row content justify-content-center align-items-center position-relative">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-4 mb-4">Ready to Transform Your Business Digitally?</h2>
+                    <p class="mb-4">Let's build your next-generation software solution with our award-winning
+                        development team. Get started with a free consultation today.</p>
+                    <a href="#contact" class="btn btn-cta">Start Your Project Now</a>
+                </div>
+
+                <!-- Abstract Background Elements -->
+                <div class="shape shape-1">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M47.1,-57.1C59.9,-45.6,68.5,-28.9,71.4,-10.9C74.2,7.1,71.3,26.3,61.5,41.1C51.7,55.9,35,66.2,16.9,69.2C-1.3,72.2,-21,67.8,-36.9,57.9C-52.8,48,-64.9,32.6,-69.1,15.1C-73.3,-2.4,-69.5,-22,-59.4,-37.1C-49.3,-52.2,-32.8,-62.9,-15.7,-64.9C1.5,-67,34.3,-68.5,47.1,-57.1Z"
+                            transform="translate(100 100)"></path>
+                    </svg>
+                </div>
+
+                <div class="shape shape-2">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M41.3,-49.1C54.4,-39.3,66.6,-27.2,71.1,-12.1C75.6,3,72.4,20.9,63.3,34.4C54.2,47.9,39.2,56.9,23.2,62.3C7.1,67.7,-10,69.4,-24.8,64.1C-39.7,58.8,-52.3,46.5,-60.1,31.5C-67.9,16.4,-70.9,-1.4,-66.3,-16.6C-61.8,-31.8,-49.7,-44.3,-36.3,-54C-22.9,-63.7,-8.2,-70.6,3.6,-75.1C15.4,-79.6,28.2,-58.9,41.3,-49.1Z"
+                            transform="translate(100 100)"></path>
+                    </svg>
+                </div>
+
+                <!-- Dot Pattern Groups -->
+                <div class="dots dots-1">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <pattern id="dot-pattern" x="0" y="0" width="20" height="20"
+                            patternUnits="userSpaceOnUse">
+                            <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+                        </pattern>
+                        <rect width="100" height="100" fill="url(#dot-pattern)"></rect>
+                    </svg>
+                </div>
+
+                <div class="dots dots-2">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <pattern id="dot-pattern-2" x="0" y="0" width="20" height="20"
+                            patternUnits="userSpaceOnUse">
+                            <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+                        </pattern>
+                        <rect width="100" height="100" fill="url(#dot-pattern-2)"></rect>
+                    </svg>
+                </div>
+
+                <div class="shape shape-3">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M43.3,-57.1C57.4,-46.5,71.1,-32.6,75.3,-16.2C79.5,0.2,74.2,19.1,65.1,35.3C56,51.5,43.1,65,27.4,71.7C11.7,78.4,-6.8,78.3,-23.9,72.4C-41,66.5,-56.7,54.8,-65.4,39.2C-74.1,23.6,-75.8,4,-71.7,-13.2C-67.6,-30.4,-57.7,-45.2,-44.3,-56.1C-30.9,-67,-15.5,-74,0.7,-74.9C16.8,-75.8,33.7,-70.7,43.3,-57.1Z"
+                            transform="translate(100 100)"></path>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- /Call To Action Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+    {
+      "loop": true,
+      "speed": 600,
+      "autoplay": {
+        "delay": 5000
+      },
+      "slidesPerView": "auto",
+      "pagination": {
+        "el": ".swiper-pagination",
+        "type": "bullets",
+        "clickable": true
+      },
+      "breakpoints": {
+        "320": {
+          "slidesPerView": 2,
+          "spaceBetween": 40
+        },
+        "480": {
+          "slidesPerView": 3,
+          "spaceBetween": 60
+        },
+        "640": {
+          "slidesPerView": 4,
+          "spaceBetween": 80
+        },
+        "992": {
+          "slidesPerView": 6,
+          "spaceBetween": 120
+        }
+      }
+    }
+  </script>
+                <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid"
+                            alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid"
+                            alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid"
+                            alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid"
+                            alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid"
+                            alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid"
+                            alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid"
+                            alt=""></div>
+                    <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid"
+                            alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+
+    </section><!-- /Clients Section -->
+
+    <!-- Founder Section -->
+    <section id="testimonials" class="testimonials section light-background">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Meet Our Founders</h2>
+            <p>The driving force behind our innovation and success</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row g-5">
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-item">
+                        <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                        <h3>Rahmatullah Bizhan</h3>
+                        <h4>Co-Founder & CEO</h4>
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i>
+                        </div>
+                        <p>
+                            <i class="bi bi-quote quote-icon-left"></i>
+                            <span>I lead our strategic growth, transforming client challenges into digital
+                                opportunities. My business acumen and tech passion drive our mission to deliver
+                                transformative solutions.</span>
+                            <i class="bi bi-quote quote-icon-right"></i>
+                        </p>
+                    </div>
+                </div><!-- End testimonial item -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-item">
+                        <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                        <h3>Abdullah Hussaini</h3>
+                        <h4>Co-Founder & CTO</h4>
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i>
+                        </div>
+                        <p>
+                            <i class="bi bi-quote quote-icon-left"></i>
+                            <span>As technical visionary, I architected our core platforms with a focus on
+                                scalability and security. My 12+ years in software engineering ensure we deliver
+                                cutting-edge solutions.</span>
+                            <i class="bi bi-quote quote-icon-right"></i>
+                        </p>
+                    </div>
+                </div><!-- End testimonial item -->
+            </div>
+
+        </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="123" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Clients</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="28" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Projects</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Years of Experience</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Workers</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section light-background">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Services</h2>
+            <p>
+                We provide end-to-end software solutions tailored to your business needs.
+            </p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row g-4">
+
+                <!-- Software Development -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card d-flex">
+                        <div class="icon flex-shrink-0">
+                            <i class="bi bi-activity"></i>
+                        </div>
+                        <div>
+                            <h3>Software Development</h3>
+                            <p>We build custom software solutions tailored to your business needs, ensuring
+                                scalability, security, and performance.</p>
+                            <a href="software-development-service.html" class="read-more">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Service Card -->
+
+                <!-- Mobile App Development -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card d-flex">
+                        <div class="icon flex-shrink-0">
+                            <i class="bi bi-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Mobile App Development</h3>
+                            <p>We create cross-platform mobile apps for iOS and Android, delivering seamless user
+                                experiences and robust functionality.</p>
+                            <a href="mobile-app-development.html" class="read-more">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Service Card -->
+
+                <!-- Web App Development -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card d-flex">
+                        <div class="icon flex-shrink-0">
+                            <i class="bi bi-globe"></i>
+                        </div>
+                        <div>
+                            <h3>Web App Development</h3>
+                            <p>We design and develop responsive, user-friendly web applications that drive
+                                engagement and business growth.</p>
+                            <a href="service-details.html" class="read-more">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Service Card -->
+
+                <!-- Web Hosting -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card d-flex">
+                        <div class="icon flex-shrink-0">
+                            <i class="bi bi-cloud"></i>
+                        </div>
+                        <div>
+                            <h3>Web Hosting</h3>
+                            <p>We provide reliable, secure, and high-performance web hosting solutions to keep your
+                                applications running smoothly.</p>
+                            <a href="service-details.html" class="read-more">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Service Card -->
+
+                <!-- Graphic Design -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card d-flex">
+                        <div class="icon flex-shrink-0">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <div>
+                            <h3>Graphic Design</h3>
+                            <p>
+                                We craft visually stunning designs that elevate your brand identity,
+                                from logos and marketing materials to UI/UX interfaces and social media graphics.
+                            </p>
+                            <a href="service-details.html" class="read-more">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Service Card -->
+
+                <!-- Online Marketing -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card d-flex">
+                        <div class="icon flex-shrink-0">
+                            <i class="bi bi-megaphone"></i>
+                        </div>
+                        <div>
+                            <h3>Marketing</h3>
+                            <p>Boost your online presence with our targeted digital marketing strategies, including
+                                SEO, social media, and PPC campaigns.</p>
+                            <a href="service-details.html" class="read-more">Read More <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Service Card -->
+
+
+            </div>
+
+        </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section light-background">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Web Hosting Plans</h2>
+            <p>
+                We have a package for every website. Get online instantly with simple pricing.
+            </p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- Basic Plan -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-card">
+                        <h3>Basic Plan</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">2</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <p class="description">Perfect for small websites and blogs. Get started with reliable
+                            hosting,
+                            fast NVMe SSD storage, and unlimited bandwidth to grow your online presence.
+                        </p>
+                        <h4>Featured Included:</h4>
+                        <ul class="features-list">
+                            <li><i class="bi bi-check-circle-fill"></i>20 GB NVMe SSD Disk</li>
+                            <li><i class="bi bi-check-circle-fill"></i>LiteSpeed Server</li>
+                            <li><i class="bi bi-check-circle-fill"></i>WordPress Installer</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Unlimited Bandwidth</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Host 05 Websites</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Private Nameservers</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Website Builder Pro</li>
+                            <li><i class="bi bi-check-circle-fill"></i>24/7 support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">
+                            Buy Now
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Standard Plan -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>Standard Plan</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">3</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <p class="description">
+                            Ideal for growing businesses and websites. Enjoy unlimited NVMe SSD storage,
+                            blazing-fast LiteSpeed servers, and all the tools you need to scale effortlessly.
+                        </p>
+                        <h4>Featured Included:</h4>
+                        <ul class="features-list">
+                            <li><i class="bi bi-check-circle-fill"></i>Unlimited NVMe SSD Disk</li>
+                            <li><i class="bi bi-check-circle-fill"></i>LiteSpeed Server</li>
+                            <li><i class="bi bi-check-circle-fill"></i>WordPress Installer</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Unlimited Bandwidth</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Host 01 Website</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Private Nameservers</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Website Builder Pro</li>
+                            <li><i class="bi bi-check-circle-fill"></i>24/7 support</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-light">
+                            Buy Now
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pricing-card">
+                        <h3>Premium Plan</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">5</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <p class="description">
+                            The ultimate solution for high-traffic websites and businesses. Enjoy unlimited
+                            resources, top-tier performance, and advanced features to power your online presence.
+                        </p>
+
+                        <h4>Featured Included:</h4>
+                        <ul class="features-list">
+                            <li><i class="bi bi-check-circle-fill"></i>Unlimited NVMe DIsk</li>
+                            <li><i class="bi bi-check-circle-fill"></i>LiteSpeed Server</li>
+                            <li><i class="bi bi-check-circle-fill"></i>WordPress Installer</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Unlimited Bandwidth</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Host Unlimited Websites</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Private Nameservers</li>
+                            <li><i class="bi bi-check-circle-fill"></i>Website Builder Pro</li>
+                            <li><i class="bi bi-check-circle-fill"></i>24/7 support</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-primary">
+                            Buy Now
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /Pricing Section -->
+
+    <!-- Faq Section -->
+    <section class="faq-9 faq section light-background" id="faq">
+        <div class="container">
+            <div class="row">
+
+                <!-- FAQ Introduction -->
+                <div class="col-lg-5" data-aos="fade-up">
+                    <h2 class="faq-title">Have a question? Check out the FAQ</h2>
+                    <p class="faq-description">
+                        Explore our frequently asked questions to find answers about our services,
+                        hosting plans, and software solutions. If you don’t find what you’re looking for,
+                        feel free to contact us!
+                    </p>
+                    <div class="faq-arrow d-none d-lg-block" data-aos="fade-up" data-aos-delay="200">
+                        <svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- FAQ Items -->
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-container">
+
+                        <!-- FAQ Item 1 -->
+                        <div class="faq-item faq-active">
+                            <h3>What services do you offer?</h3>
+                            <div class="faq-content">
+                                <p>
+                                    We specialize in custom software development, web and mobile app development,
+                                    UX/UI design, database design, and reliable web hosting solutions.
+                                    Our services are tailored to meet your business needs.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <!-- FAQ Item 2 -->
+                        <div class="faq-item">
+                            <h3>What hosting plans do you provide?</h3>
+                            <div class="faq-content">
+                                <p>
+                                    We offer three hosting plans: Basic, Standard, and Premium.
+                                    Each plan includes features like NVMe SSD storage, LiteSpeed servers,
+                                    unlimited bandwidth, and 24/7 support. Choose the one that fits your needs!
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <!-- FAQ Item 3 -->
+                        <div class="faq-item">
+                            <h3>Do you provide support for your hosting services?</h3>
+                            <div class="faq-content">
+                                <p>
+                                    Yes, we offer 24/7 support for all our hosting plans.
+                                    Our team is always available to assist you with any technical issues or
+                                    questions.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <!-- FAQ Item 4 -->
+                        <div class="faq-item">
+                            <h3>Can you develop custom software for my business?</h3>
+                            <div class="faq-content">
+                                <p>
+                                    Absolutely! We specialize in building custom software solutions tailored to your
+                                    specific business requirements. From concept to deployment, we’ve got you
+                                    covered.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <!-- FAQ Item 5 -->
+                        <div class="faq-item">
+                            <h3>Do you offer mobile app development?</h3>
+                            <div class="faq-content">
+                                <p>
+                                    Yes, we develop cross-platform mobile applications for both iOS and Android.
+                                    Our apps are designed to deliver seamless user experiences and robust
+                                    functionality.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <!-- FAQ Item 6 -->
+                        <div class="faq-item">
+                            <h3>How do I get started with your services?</h3>
+                            <div class="faq-content">
+                                <p>
+                                    Simply reach out to us via our contact form, email, or phone.
+                                    We’ll discuss your requirements and provide a tailored solution to meet your
+                                    needs.
+                                </p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section><!-- /Faq Section -->
+
+
+    <!-- Call To Action 2 Section -->
+    <section id="call-to-action-2" class="call-to-action-2 section dark-background">
+
+        <div class="container">
+            <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-xl-10">
+                    <div class="text-center">
+                        <h3>Ready to Transform Your Business?</h3>
+                        <p>
+                            Whether you need custom software, a mobile app, or reliable web hosting,
+                            we’re here to help. Let’s build something amazing together—contact us today
+                            to get started!
+                        </p>
+                        <a class="cta-btn" href="index.html#contact">Get Started Now</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+
+    </section><!-- /Call To Action 2 Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section light-background">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Contact</h2>
+            <p>
+                Have a question or want to discuss your next project? We’re here to help!
+                Get in touch with our team, and let’s create something extraordinary together.
+            </p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row g-4 g-lg-5">
+                <div class="col-lg-5">
+                    <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Contact Info</h3>
+                        <p>
+                            Have a project in mind or need technical assistance? Reach out to us! Our team is ready
+                            to help you build innovative solutions.
+                            Call, email, or visit us—we’re here to turn your ideas into reality.
+                        </p>
+
+                        <!-- <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-box">
+                      <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <div class="content">
+                      <h4>Our Location</h4>
+                      <p>A108 Adam Street</p>
+                      <p>New York, NY 535022</p>
+                    </div>
+                  </div> -->
+
+                        <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="icon-box">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <div class="content">
+                                <h4>Phone Number</h4>
+                                <p>+93 745 282 354</p>
+                                <p>+93 749 840 055</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item" data-aos="fade-up" data-aos-delay="500">
+                            <div class="icon-box">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div class="content">
+                                <h4>Email Address</h4>
+                                <p>info@glidesoft.net</p>
+                                <p>h.abdullah1394@gmail.com</p>
+                                <p>rahmatullahbizhan@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="icon-box">
+                                <i class="bi bi-whatsapp"></i>
+                            </div>
+                            <div class="content">
+                                <h4>Whatsapp</h4>
+                                <p>+93 745 282 354</p>
+                                <p>+93 749 840 055</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
+                        <h3>Get In Touch</h3>
+                        <p>
+                            Ready to start your next project or have questions about our services? We’d love to hear
+                            from you!
+                            Contact us today, and let’s build something amazing together.
+                        </p>
+
+                        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+                            data-aos-delay="200">
+                            <div class="row gy-4">
+
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                        required="">
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                        required="">
+                                </div>
+
+                                <div class="col-12">
+                                    <input type="text" class="form-control" name="subject" placeholder="Subject"
+                                        required="">
+                                </div>
+
+                                <div class="col-12">
+                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                                </div>
+
+                                <div class="col-12 text-center">
+                                    <div class="loading">Loading</div>
+                                    <div class="error-message"></div>
+                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                                    <button type="submit" class="btn">Send Message</button>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /Contact Section -->
+@endsection
