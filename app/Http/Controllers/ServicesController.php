@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Services;
 
-class SoftwareDevController extends Controller
+class ServicesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $services = Services::where('is_active', true)->get();
+        return view('services.index', compact('services'));
     }
 
     /**
@@ -33,9 +35,10 @@ class SoftwareDevController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug)
     {
-        return view('software-dev.show');
+        // $services = Services::where('slug', $slug)->firstOrFail();
+        // return view('services.view', compact('services'));
     }
 
     /**

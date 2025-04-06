@@ -723,7 +723,7 @@
                             <h3>Software Development</h3>
                             <p>We build custom software solutions tailored to your business needs, ensuring
                                 scalability, security, and performance.</p>
-                                <a href="{{ route('software-dev.show', 's') }}" class="read-more">
+                                <a href="{{route('services.index')}}" class="read-more">
                                     Read More <i class="bi bi-arrow-right"></i>
                                 </a>
                         </div>

@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class SoftwarDev extends Model
+class Services extends Model
 {
     use HasFactory;
 
@@ -12,12 +13,7 @@ class SoftwarDev extends Model
         'title',
         'description',
         'image',
-        'technologies',
         'slug',
         'is_active'
-    ];
-
-    protected $casts = [
-        'technologies' => 'array',
     ];
 }
