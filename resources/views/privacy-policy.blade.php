@@ -25,7 +25,7 @@
                     <div class="service-box">
                         <h4>Legal Documents</h4>
                         <div class="services-list">
-                            <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Terms of Service</span></a>
+                            <a href="{{route('terms-of-service')}}"><i class="bi bi-arrow-right-circle"></i><span>Terms of Service</span></a>
                             <a href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Privacy
                                     Policy</span></a>
                             <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Cookie Policy</span></a>
@@ -46,69 +46,83 @@
                 </div>
 
                 <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
-                    <img src="{{ asset('assets/img/terms-of-service.png') }}" alt="Software development team working"
+                    <img src="{{ asset('assets/img/protection.png') }}" alt="Software development team working"
                         class="img-fluid services-img">
 
                     <p class="last-updated"><i class="bi bi-calendar-check me-2"></i>Last Updated: June 15, 2023</p>
 
                     <div class="policy-section">
-                        <h3><i class="bi bi-info-circle-fill text-primary me-2"></i>1. Information We Collect</h3>
+                        <h3><i class="bi bi-info-circle-fill text-primary me-2"></i> Information We Collect</h3>
                         <p>We may collect and process:</p>
                         <ul>
-                            <li><strong>Contact Data:</strong> Name, email, phone when you inquire about services</li>
-                            <li><strong>Project Data:</strong> Business requirements and documents you provide</li>
-                            <li><strong>Technical Data:</strong> IP address, browser type, and usage patterns</li>
-                            <li><strong>Payment Data:</strong> Processed securely through our payment partners</li>
-                        </ul>
-                    </div>
 
-                    <div class="policy-section">
-                        <h3><i class="bi bi-lock-fill text-primary me-2"></i>2. How We Use Your Data</h3>
+                        </ul>
                         <ul>
-                            <li>To provide and maintain our services</li>
-                            <li>To notify you about changes to our services</li>
-                            <li>To allow participation in interactive features</li>
-                            <li>For customer support and business analytics</li>
-                            <li>For security and fraud prevention</li>
+                            <li><i class="bi bi-check-circle"></i> <span><strong>Contact Data:&nbsp;</strong> Name, email,
+                                    phone when you inquire about services</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span> <strong>Project Data:&nbsp;</strong> Business
+                                    requirements and documents you provide</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span> <strong>Technical Data:&nbsp;</strong> IP address,
+                                    browser type, and usage patterns</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span> <strong>Payment Data:&nbsp;</strong> Processed
+                                    securely through our payment partners</span></li>
                         </ul>
                     </div>
 
                     <div class="policy-section">
-                        <h3><i class="bi bi-share-fill text-primary me-2"></i>3. Data Sharing</h3>
+                        <h3><i class="bi bi-lock-fill text-primary me-2"></i> How We Use Your Data</h3>
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i> <span>To provide and maintain our services</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span>To notify you about changes to our services</span>
+                            </li>
+                            <li><i class="bi bi-check-circle"></i> <span>To allow participation in interactive
+                                    features</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span>For customer support and business analytics</span>
+                            </li>
+                            <li><i class="bi bi-check-circle"></i> <span>For security and fraud prevention</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3><i class="bi bi-share-fill text-primary me-2"></i> Data Sharing</h3>
                         <p>We only share data with:</p>
                         <ul>
-                            <li>Service providers (hosting, payment processors)</li>
-                            <li>When required by law or legal process</li>
-                            <li>With your explicit consent</li>
+                            <li><i class="bi bi-check-circle"></i> <span>Service providers (hosting, payment
+                                    processors)</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span>When required by law or legal process</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span>With your explicit consent</span></li>
                         </ul>
                         <p>We never sell your personal information.</p>
                     </div>
 
                     <div class="policy-section">
-                        <h3><i class="bi bi-globe text-primary me-2"></i>4. International Transfers</h3>
+                        <h3><i class="bi bi-globe text-primary me-2"></i> International Transfers</h3>
                         <p>Data may be transferred to and processed in countries outside your jurisdiction. We implement
                             Standard Contractual Clauses to ensure adequate protection.</p>
                     </div>
 
                     <div class="policy-section">
-                        <h3><i class="bi bi-shield-check text-primary me-2"></i>5. Data Security</h3>
+                        <h3><i class="bi bi-shield-check text-primary me-2"></i> Data Security</h3>
                         <p>We implement appropriate technical and organizational measures including:</p>
                         <ul>
-                            <li>Encryption of sensitive data</li>
-                            <li>Regular security assessments</li>
-                            <li>Access controls and authentication protocols</li>
+                            <li><i class="bi bi-check-circle"></i> <span>Encryption of sensitive data</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span>Regular security assessments</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span>Access controls and authentication protocols</span>
+                            </li>
                         </ul>
                     </div>
 
                     <div class="policy-section">
-                        <h3><i class="bi bi-person-check text-primary me-2"></i>6. Your Rights</h3>
+                        <h3><i class="bi bi-person-check text-primary me-2"></i> Your Rights</h3>
                         <p>You have the right to:</p>
                         <ul>
-                            <li>Access and receive a copy of your data</li>
-                            <li>Rectify inaccurate or incomplete data</li>
-                            <li>Request erasure under certain conditions</li>
-                            <li>Restrict or object to processing</li>
-                            <li>Lodge complaints with supervisory authorities</li>
+                            <li><i class="bi bi-check-circle"></i> <span>Access and receive a copy of your data</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span>Rectify inaccurate or incomplete data</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span>Request erasure under certain conditions</span>
+                            </li>
+                            <li><i class="bi bi-check-circle"></i> <span>Restrict or object to processing</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span>Lodge complaints with supervisory
+                                    authorities</span></li>
                         </ul>
                     </div>
 
