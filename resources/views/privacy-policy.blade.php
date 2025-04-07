@@ -28,7 +28,7 @@
                             <a href="{{route('terms-of-service')}}"><i class="bi bi-arrow-right-circle"></i><span>Terms of Service</span></a>
                             <a href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Privacy
                                     Policy</span></a>
-                            <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Cookie Policy</span></a>
+                            <a href="{{route('cookie-policy')}}"><i class="bi bi-arrow-right-circle"></i><span>Cookie Policy</span></a>
                             <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Data Processing
                                     Agreement</span></a>
                         </div>
@@ -128,7 +128,7 @@
 
                     <div class="policy-section">
                         <h3><i class="bi bi-cookie text-primary me-2"></i>7. Cookies</h3>
-                        <p>We use essential and analytical cookies. See our <a href="#">Cookie Policy</a> for details.
+                        <p>We use essential and analytical cookies. See our <a href="{{route('cookie-policy')}}">Cookie Policy</a> for details.
                         </p>
                     </div>
 

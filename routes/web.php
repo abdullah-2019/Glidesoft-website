@@ -12,3 +12,4 @@ Route::get('services', [ServicesController::class, 'index'])->name('services.ind
 Route::get('services/{slug}', [ServicesController::class, 'show'])->name('services.show');
 Route::get('terms-of-services', [MISCController::class, 'termsOfServices'])->name('terms-of-service');
 Route::get('/privacy-policy', [MISCController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('/cookie-policy', [MISCController::class, 'cookiePolicy'])->name('cookie-policy');
