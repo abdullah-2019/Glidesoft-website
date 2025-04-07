@@ -9,4 +9,8 @@ class MISCController extends Controller
     public function termsOfServices() {
         return view('terms-of-service');
     }
+
+    public function privacyPolicy() {
+        return view('privacy-policy');
+    }
 }
