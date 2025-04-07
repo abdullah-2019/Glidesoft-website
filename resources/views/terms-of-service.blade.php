@@ -23,7 +23,7 @@
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
 
                     <div class="service-box">
-                        <h4>Our Services</h4>
+                        <h4>Legal Documents</h4>
                         <div class="services-list">
                             <a href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Terms of Service</span></a>
                             <a href="{{route('privacy-policy')}}"><i class="bi bi-arrow-right-circle"></i><span>Privacy Policy</span></a>
