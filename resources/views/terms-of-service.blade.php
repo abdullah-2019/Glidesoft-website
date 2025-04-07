@@ -26,7 +26,7 @@
                         <h4>Our Services</h4>
                         <div class="services-list">
                             <a href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Terms of Service</span></a>
-                            <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Privacy Policy</span></a>
+                            <a href="{{route('privacy-policy')}}"><i class="bi bi-arrow-right-circle"></i><span>Privacy Policy</span></a>
                             <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Cookie Policy</span></a>
                             <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Service Level Agreement</span></a>
                         </div>
