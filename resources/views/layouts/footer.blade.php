@@ -23,7 +23,7 @@
             <div class="col-lg-2 col-md-3 footer-links">
                 <h4>Useful Links</h4>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{url('/')}}">Home</a></li>
                     <li><a href="#">About us</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="{{route('terms-of-service')}}">Terms of service</a></li>
