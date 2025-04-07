@@ -24,7 +24,7 @@
                     <div class="service-box">
                         <h4>Data Protection</h4>
                         <div class="services-list">
-                            <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Privacy Policy</span></a>
+                            <a href="{{route('privacy-policy')}}"><i class="bi bi-arrow-right-circle"></i><span>Privacy Policy</span></a>
                             <a href="{{ route('privacy-policy') }}"><i class="bi bi-arrow-right-circle"></i><span>Privacy
                                     Policy</span></a>
                             <a href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Cookie
