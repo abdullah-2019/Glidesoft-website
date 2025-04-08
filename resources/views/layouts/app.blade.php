@@ -29,9 +29,6 @@
     <!-- Main CSS File -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template URL: https://bootstrapmade.com/ilanding-bootstrap-landing-page-template/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
