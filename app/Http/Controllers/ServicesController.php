@@ -12,8 +12,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $services = Services::where('is_active', true)->get();
-        return view('services.index', compact('services'));
+        //
     }
 
     /**
@@ -63,5 +62,10 @@ class ServicesController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function softwareDevService() {
+        $services = Services::where('is_active', true)->get();
+        return view('services.software-dev', compact('services'));
     }
 }

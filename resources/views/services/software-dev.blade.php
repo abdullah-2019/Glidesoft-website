@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/img/software-dev.png" alt="Software development team working"
+                    <img src="{{asset('assets/img/software-dev.png')}}" alt="Software development team working"
                         class="img-fluid services-img">
                     <h3>Tailored Software Solutions for Your Business Needs</h3>
                     <p>
