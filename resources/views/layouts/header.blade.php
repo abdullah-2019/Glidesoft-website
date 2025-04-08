@@ -4,7 +4,7 @@
 
         <a href="{{url('/')}}" class="logo d-flex align-items-center me-auto me-xl-0">
             <!-- Uncomment the line below if you also wish to use an image logo -->
-            <img src="assets/img/logo.png" alt="logo" loading="lazy">
+            <img src="{{ asset('assets/img/logo.png') }}" alt="logo" loading="lazy">
             <h1 class="sitename">Glidesoft</h1>
         </a>
 
