@@ -43,13 +43,11 @@
             </div>
 
             <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Hic solutasetp</h4>
+                <h4>Help</h4>
                 <ul>
-                    <li><a href="#">Molestiae accusamus iure</a></li>
-                    <li><a href="#">Excepturi dignissimos</a></li>
-                    <li><a href="#">Suscipit distinctio</a></li>
-                    <li><a href="#">Dilecta</a></li>
-                    <li><a href="#">Sit quas consectetur</a></li>
+                    <li><a href="{{url('/')}}/#faq">Have a Question</a></li>
+                    <li><a href="{{url('/')}}#testimonials">Meet Founders</a></li>
+                    <li><a href="{{url('/')}}#contact">Order Your Project</a></li>
                 </ul>
             </div>
 
