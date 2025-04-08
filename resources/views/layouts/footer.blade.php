@@ -24,10 +24,10 @@
                 <h4>Useful Links</h4>
                 <ul>
                     <li><a href="{{url('/')}}">Home</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="{{route('terms-of-service')}}">Terms of service</a></li>
-                    <li><a href="{{route('privacy-policy')}}">Privacy policy</a></li>
+                    <li><a href="{{url('/')}}#about">About us</a></li>
+                    <li><a href="{{url('/')}}#features">Features</a></li>
+                    <li><a href="{{url('/')}}#pricing">Pricing</a></li>
+                    <li><a href="{{url('/')}}#contact">Contact</a></li>
                 </ul>
             </div>
 
@@ -54,13 +54,11 @@
             </div>
 
             <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Nobis illum</h4>
+                <h4>Legal Documents</h4>
                 <ul>
-                    <li><a href="#">Ipsam</a></li>
-                    <li><a href="#">Laudantium dolorum</a></li>
-                    <li><a href="#">Dinera</a></li>
-                    <li><a href="#">Trodelas</a></li>
-                    <li><a href="#">Flexo</a></li>
+                    <li><a href="{{route('terms-of-service')}}">Terms of service</a></li>
+                    <li><a href="{{route('privacy-policy')}}">Privacy policy</a></li>
+                    <li><a href="{{route('cookie-policy')}}">Cookies Policy</a></li>
                 </ul>
             </div>
 
