@@ -740,7 +740,7 @@
                             <h3>Mobile App Development</h3>
                             <p>We create cross-platform mobile apps for iOS and Android, delivering seamless user
                                 experiences and robust functionality.</p>
-                            <a href="mobile-app-development.html" class="read-more">Read More <i
+                            <a href="{{route('services.mobile-app-dev-service')}}" class="read-more">Read More <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
