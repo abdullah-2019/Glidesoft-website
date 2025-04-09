@@ -756,7 +756,7 @@
                             <h3>Web App Development</h3>
                             <p>We design and develop responsive, user-friendly web applications that drive
                                 engagement and business growth.</p>
-                            <a href="service-details.html" class="read-more">Read More <i
+                            <a href="{{route('service.web-dev')}}" class="read-more">Read More <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>

@@ -72,4 +72,8 @@ class ServicesController extends Controller
     public function mobileAppDevService() {
         return view('services.mobile-dev');
     }
+
+    function webDevService() {
+        return view('services.web-dev');
+    }
 }
