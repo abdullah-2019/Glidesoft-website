@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
-                    <img src="{{asset('assets/img/web-dev-team.png')}}" alt="Web application development team working"
+                    <img src="{{asset('assets/img/web-dev.png')}}" alt="Web application development team working"
                         class="img-fluid services-img">
                     <h3>Custom Web Applications Built for Performance</h3>
                     <p>
