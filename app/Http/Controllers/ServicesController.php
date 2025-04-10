@@ -76,4 +76,8 @@ class ServicesController extends Controller
     function webDevService() {
         return view('services.web-dev');
     }
+
+    function webHostingService()  {
+        return view('services.web-hosting');
+    }
 }
