@@ -29,6 +29,9 @@
     <!-- Main CSS File -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
 
+    @stack('styles')
+
+
 </head>
 
 <body class="index-page">
