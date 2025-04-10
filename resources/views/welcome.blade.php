@@ -772,7 +772,7 @@
                             <h3>Web Hosting</h3>
                             <p>We provide reliable, secure, and high-performance web hosting solutions to keep your
                                 applications running smoothly.</p>
-                            <a href="service-details.html" class="read-more">Read More <i
+                            <a href="{{route('service.web-hosting')}}" class="read-more">Read More <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
