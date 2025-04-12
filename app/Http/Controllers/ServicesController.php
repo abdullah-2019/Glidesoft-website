@@ -80,4 +80,8 @@ class ServicesController extends Controller
     function webHostingService()  {
         return view('services.web-hosting');
     }
+
+    function graphicDesign() {
+        return view('services.graphic-design');
+    }
 }

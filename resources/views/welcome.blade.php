@@ -790,7 +790,7 @@
                                 We craft visually stunning designs that elevate your brand identity,
                                 from logos and marketing materials to UI/UX interfaces and social media graphics.
                             </p>
-                            <a href="service-details.html" class="read-more">Read More <i
+                            <a href="{{route('service.graphic-design')}}" class="read-more">Read More <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
