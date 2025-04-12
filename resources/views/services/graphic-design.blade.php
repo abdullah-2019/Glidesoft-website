@@ -205,7 +205,7 @@
                             <div class="portfolio-links">
                                 <a href="{{ asset('assets/img/clients/client-1.png') }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox"
-                                    title="Tech Startup Branding"><i class="bi bi-plus"></i></a>
+                                    title="Tech Startup Branding"><i class="bi bi-fullscreen"></i></a>
                                 <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
                             </div>
                         </div>
@@ -223,7 +223,7 @@
                             <div class="portfolio-links">
                                 <a href="{{ asset('assets/img/clients/client-5.png') }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox"
-                                    title="Corporate Brochure"><i class="bi bi-plus"></i></a>
+                                    title="Corporate Brochure"><i class="bi bi-fullscreen"></i></a>
                                 <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
                             </div>
                         </div>
@@ -241,7 +241,7 @@
                             <div class="portfolio-links">
                                 <a href="{{ asset('assets/img/clients/client-8.png') }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox" title="Fitness App UI"><i
-                                        class="bi bi-plus"></i></a>
+                                        class="bi bi-fullscreen"></i></a>
                                 <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
                             </div>
                         </div>
