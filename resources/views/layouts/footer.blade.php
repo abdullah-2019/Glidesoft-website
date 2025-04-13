@@ -34,11 +34,11 @@
             <div class="col-lg-2 col-md-3 footer-links">
                 <h4>Our Services</h4>
                 <ul>
-                    <li><a href="#">Mobile App Development</a></li>
-                    <li><a href="#">Web App Development</a></li>
-                    <li><a href="#">Web Hosting</a></li>
-                    <li><a href="#">Marketing</a></li>
-                    <li><a href="#">Graphic Design</a></li>
+                    <li><a href="{{route('services.mobile-app-dev-service')}}">Mobile App Development</a></li>
+                    <li><a href="{{route('service.web-dev')}}">Web App Development</a></li>
+                    <li><a href="{{route('service.web-hosting')}}">Web Hosting</a></li>
+                    <li><a href="{{route('service.marketing')}}">Marketing</a></li>
+                    <li><a href="{{route('service.graphic-design')}}">Graphic Design</a></li>
                 </ul>
             </div>
 
