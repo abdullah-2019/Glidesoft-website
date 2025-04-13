@@ -13,6 +13,7 @@ Route::get('services/mobile-app-dev-service', [ServicesController::class, 'mobil
 Route::get('services/web-dev-service', [ServicesController::class, 'webDevService'])->name('service.web-dev');
 Route::get('services/web-hosting', [ServicesController::class, 'webHostingService'])->name('service.web-hosting');
 Route::get('/services/graphic-design', [ServicesController::class, 'graphicDesign'])->name('service.graphic-design');
+Route::get('/services/marketing', [ServicesController::class, 'marketingService'])->name('service.marketing');
 Route::get('services/{slug}', [ServicesController::class, 'show'])->name('services.show');
 Route::get('terms-of-services', [MISCController::class, 'termsOfServices'])->name('terms-of-service');
 Route::get('/privacy-policy', [MISCController::class, 'privacyPolicy'])->name('privacy-policy');

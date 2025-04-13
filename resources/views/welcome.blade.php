@@ -806,7 +806,7 @@
                             <h3>Marketing</h3>
                             <p>Boost your online presence with our targeted digital marketing strategies, including
                                 SEO, social media, and PPC campaigns.</p>
-                            <a href="service-details.html" class="read-more">Read More <i
+                            <a href="{{route('service.marketing')}}" class="read-more">Read More <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>

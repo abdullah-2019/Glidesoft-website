@@ -84,4 +84,8 @@ class ServicesController extends Controller
     function graphicDesign() {
         return view('services.graphic-design');
     }
+
+    function marketingService() {
+        return view('services.marketing');
+    }
 }
