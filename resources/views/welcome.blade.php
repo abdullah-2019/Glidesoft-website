@@ -630,7 +630,7 @@
 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="testimonial-item">
-                        <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                        <img src="assets/img/founder/abdullah.webp" class="testimonial-img" alt="">
                         <h3>Abdullah Hussaini</h3>
                         <h4>Co-Founder & CTO</h4>
                         <div class="stars">
