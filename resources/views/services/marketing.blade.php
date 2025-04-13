@@ -261,9 +261,8 @@
             <p class="mb-4" data-aos="fade-up" data-aos-delay="100">Get a free marketing audit and proposal for your
                 business</p>
             <div data-aos="fade-up" data-aos-delay="200">
-                <a href="#contact" class="btn btn-light me-3">Get Started</a>
-                <a href="tel:+93745282354" class="btn btn-outline-light">Call Our Experts</a>
-            </div>
+                <a href="tel:+93745282354" class="btn btn-light me-3">Get Started</a>
+                <a href="https://wa.me/93745282354?text=Hello%20there,%20I%20would%20like%20to%20get%20in%20touch%20with%20you" class="btn btn-outline-light" target="_blank">Contact Our Experts</a>            </div>
         </div>
     </section><!-- /CTA Section -->
 @endsection
