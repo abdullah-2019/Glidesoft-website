@@ -41,7 +41,7 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Website Builder Pro</li>
                                 <li><i class="bi bi-check-circle-fill"></i>24/7 support</li>
                             </ul>
-                            <a href="#" class="btn btn-custom">Get Started</a>
+                            <a href="https://wa.me/93745282354?text=Hello%20there,%20I%20would%20like%20to%20get%20in%20touch%20with%20you" target="_blank" class="btn btn-custom">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Website Builder Pro</li>
                                 <li><i class="bi bi-check-circle-fill"></i>24/7 support</li>
                             </ul>
-                            <a href="#" class="btn btn-custom bg-full">Get Started</a>
+                            <a href="https://wa.me/93745282354?text=Hello%20there,%20I%20would%20like%20to%20get%20in%20touch%20with%20you" target="_blank" class="btn btn-custom bg-full">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Website Builder Pro</li>
                                 <li><i class="bi bi-check-circle-fill"></i>24/7 support</li>
                             </ul>
-                            <a href="#" class="btn btn-custom">Get Started</a>
+                            <a href="https://wa.me/93745282354?text=Hello%20there,%20I%20would%20like%20to%20get%20in%20touch%20with%20you" target="_blank" class="btn btn-custom">Get Started</a>
                         </div>
                     </div>
                 </div>
