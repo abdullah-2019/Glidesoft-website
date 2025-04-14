@@ -229,6 +229,7 @@
         height: 100%;
         position: relative;
         transition: transform 0.3s;
+        border: 0.5px solid #e1edf9;
     }
     .hosting-card:hover {
         transform: translateY(-10px);
