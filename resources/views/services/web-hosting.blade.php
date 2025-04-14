@@ -211,8 +211,8 @@
             <h2 data-aos="fade-up">Ready to Experience Premium Hosting?</h2>
             <p class="mb-4" data-aos="fade-up" data-aos-delay="100">Migrate your website for free with our expert assistance</p>
             <div data-aos="fade-up" data-aos-delay="200">
-                <a href="#" class="btn btn-light me-3">Get Started Now</a>
-                <a href="#" class="btn btn-outline-light">Chat with an Expert</a>
+                <a href="tel:+935282354" class="btn btn-light me-3">Get Started Now</a>
+                <a href="https://wa.me/93745282354?text=Hello%20there,%20I%20would%20like%20to%20get%20in%20touch%20with%20you" target="_blank" class="btn btn-outline-light">Chat with an Expert</a>
             </div>
         </div>
     </section><!-- /CTA Section -->
