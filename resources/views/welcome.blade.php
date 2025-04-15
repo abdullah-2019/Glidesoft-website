@@ -610,7 +610,7 @@
 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="testimonial-item">
-                        <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                        <img src="assets/img/founder/bizhan.webp" class="testimonial-img" alt="">
                         <h3>Rahmatullah Bizhan</h3>
                         <h4>Co-Founder & CEO</h4>
                         <div class="stars">
