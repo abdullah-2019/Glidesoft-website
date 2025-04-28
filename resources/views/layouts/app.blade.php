@@ -45,8 +45,8 @@
     @include('layouts.footer')
     
     <!-- Scroll Top -->
-    {{-- <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a> --}}
+    <a style="display: none !important" href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
     @include('layouts.scripts')
