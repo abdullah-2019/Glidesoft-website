@@ -37,7 +37,7 @@
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted" href="{{url('/')}}#contact">Contact Now</a>
+        <a class="btn-getstarted" href="https://wa.me/93745282354?text=Hello%20there,%20I%20would%20like%20to%20get%20in%20touch%20with%20you" target="_blank">Contact Now</a>
 
     </div>
 </header>
