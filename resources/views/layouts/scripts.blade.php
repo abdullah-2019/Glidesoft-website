@@ -7,6 +7,8 @@
 <!-- Main JS File -->
 <script src="{{ asset('assets/js/main.js') }}"></script>
 
+<script src="//code.tidio.co/85tfnck5wl8pqhf0p4wtu4bf4vfe31sf.js" async></script>
+
 @yield('scripts')
 
 @stack('scripts')
