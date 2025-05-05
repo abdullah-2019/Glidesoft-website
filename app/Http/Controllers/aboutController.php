@@ -64,28 +64,4 @@ class ServicesController extends Controller
         //
     }
 
-    public function softwareDevService() {
-        $services = Services::where('is_active', true)->get();
-        return view('services.software-dev', compact('services'));
-    }
-
-    public function mobileAppDevService() {
-        return view('services.mobile-dev');
-    }
-
-    function webDevService() {
-        return view('services.web-dev');
-    }
-
-    function webHostingService()  {
-        return view('services.web-hosting');
-    }
-
-    function graphicDesign() {
-        return view('services.graphic-design');
-    }
-
-    function marketingService() {
-        return view('services.marketing');
-    }
 }
