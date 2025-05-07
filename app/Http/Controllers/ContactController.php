@@ -10,10 +10,6 @@ class MISCController extends Controller
         return view('terms-of-service');
     }
 
-    public function privacyPolicy() {
-        return view('privacy-policy');
-    }
-
 
 
     
