@@ -18,7 +18,5 @@ class MISCController extends Controller
         return view('cookie-policy');
     }
 
-    public function cookiePolicy() {
-        return view('cookie-policy');
-    }
+    
 }
