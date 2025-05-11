@@ -81,13 +81,6 @@ class ServicesController extends Controller
         return view('services.web-hosting');
     }
 
-    function graphicDesign() {
-        return view('services.graphic-design');
-    }
-
-    function marketingService() {
-        return view('services.marketing');
-    }
 
     
 }
