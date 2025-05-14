@@ -65,12 +65,5 @@ class ActivityLogController extends Controller
         return view('user-activity-log.list.index');
     }
 
-    public function logForReact(Request $request)
-    {
-        $activityLogs = Activity::query()
-                ->select('activity_log.*', 'users.id as user_id', 'users.name as user_name')
-                ->leftJoin('users', 'users.id', '=', 'activity_log.causer_id')
-                ->orderBy('activity_log.created_at', 'desc');
-        return DataTables::of($activityLogs)->make(true);
-    }
+    
 }
