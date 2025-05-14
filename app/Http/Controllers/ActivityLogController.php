@@ -57,6 +57,26 @@ class ActivityLogController extends Controller
                         return 'No changes available';
                     }
                 })
+                ->editColumn('properties', function ($activityLog) {
+                    $properties = json_decode($activityLog->properties, true);
+                    if (isset($properties['changes'])) {
+                        $changes = json_decode($properties['changes'], true);
+                        $table = '<table>';
+                        $table .= '<tr><th>Attribute</th><th>Old Value</th><th>New Value</th></tr>';
+                        foreach ($changes as $change) {
+                            if (!empty($change)) {
+                                $attribute = $change['attribute'];
+                                $oldValue = $change['old_value'];
+                                $newValue = $change['new_value'];
+                                $table .= '<tr><td>' . $attribute . '</td><td>' . $oldValue . '</td><td>' . $newValue . '</td></tr>';
+                            }
+                        }
+                        $table .= '</table>';
+                        return $table;
+                    } else {
+                        return 'No changes available';
+                    }
+                })
                 ->rawColumns(['user', 'description', 'created_at', 'updated_at', 'properties'])
                 ->make(true);
         }
