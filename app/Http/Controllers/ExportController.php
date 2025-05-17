@@ -19,4 +19,13 @@ class ExportController extends Controller
             [4, 5, 6]
         ]);
     }
+
+    public function collection1()
+    {
+        return new Collection([
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]);
+    }
 }
