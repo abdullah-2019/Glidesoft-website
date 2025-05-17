@@ -12,13 +12,7 @@ class ExportController extends Controller
 
     }
 
-    public function collection()
-    {
-        return new Collection([
-            [1, 2, 3],
-            [4, 5, 6]
-        ]);
-    }
+
 
     
 }
